@@ -2,7 +2,11 @@
 
 An evolving **React + TypeScript portfolio design system** for long-form product storytelling and agent-assisted development. It brings together reusable components, design tokens, Storybook examples, machine-readable contracts and explicit rules for agent discovery and reuse.
 
-**Status:** Public-release candidate `0.2.0-rc.0`. This repo is prepared for publication but is not yet a stable, fully agent-validated component library.
+**Public Storybook:** [Browse the design system](https://krpadesigns-aiux.github.io/agent-ready-design-system/)
+**Live agent registry:** [Browse registry.json](https://krpadesigns-aiux.github.io/agent-ready-design-system/registry.json)
+**GitHub source:** [krpadesigns-aiux/agent-ready-design-system](https://github.com/krpadesigns-aiux/agent-ready-design-system)
+
+**Status:** Public source and public Storybook live. The React package is still a private npm release candidate `0.2.0-rc.0`, not a stable or fully autonomous-agent-validated library.
 
 ## What's included
 
