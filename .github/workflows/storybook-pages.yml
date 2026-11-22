@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: github-pages
@@ -28,6 +30,8 @@ jobs:
         run: npm ci
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build Storybook
         run: npm run build-storybook
       - name: Validate agent registry and Storybook mapping
