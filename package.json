@@ -2,7 +2,7 @@
   "name": "@krpadesigns/portfolio-design-system",
   "version": "0.2.0-rc.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist",

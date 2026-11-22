@@ -101,6 +101,6 @@ A separate private portfolio can consume versioned releases from this repository
 
 ## Publication and licensing
 
-The project is currently `UNLICENSED` pending explicit ownership and license selection. Public visibility does not grant reuse rights. The publication process includes a final code, attribution and asset review before a license is applied.
+The original code in this repository is released under the [MIT License](./LICENSE). The repository owner is responsible for verifying rights to any adapted source or third-party materials. The React package remains `private: true` to prevent an accidental npm release; the repository and hosted Storybook can still be public.
 
 The current package release is a **release candidate**, not a production stability guarantee.
