@@ -1,0 +1,75 @@
+{
+  "id": "dark-contribution-panel",
+  "component": "DarkContributionPanel",
+  "maturity": "candidate",
+  "usage_class": "reuse",
+  "scope": "page-family",
+  "source_of_truth": "catalog/source-styles/case-study-dark-contribution.css",
+  "required_inputs": [
+    "heading",
+    "content"
+  ],
+  "states": [
+    "compact",
+    "delivered"
+  ],
+  "visual_contract": [
+    "#17191A surface",
+    "#343637 border",
+    "14px radius",
+    "24px desktop padding",
+    "20px mobile padding",
+    "34px/600 desktop heading",
+    "28px/600 mobile heading",
+    "14px/1.65 body"
+  ],
+  "constraints": [
+    "Apply pds-dark-contribution, optionally --compact or --delivered; import shared CSS.",
+    "Heading is h3; content and composition remain consumer-owned.",
+    "Slingshot nested legacy-card fixes stay in explicitly scoped compatibility rules."
+  ],
+  "verification": [
+    "Verify 1440px, 768px, and 390px.",
+    "Verify heading/body computed typography.",
+    "Verify no document horizontal overflow.",
+    "Regression-test all existing dark contribution surfaces.",
+    "Run design-system registry validation."
+  ],
+  "api": {
+    "class": "pds-dark-contribution",
+    "modifiers": [
+      "compact",
+      "delivered"
+    ],
+    "slots": [
+      "h3 heading",
+      "content"
+    ]
+  },
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A case study needs a dark personal-contribution or delivered-work surface"
+  ],
+  "use_when": [
+    "A case study needs a dark personal-contribution or delivered-work surface"
+  ],
+  "do_not_use_when": [
+    "Ordinary narrative prose or a purely decorative dark card."
+  ],
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "05-body-sections-editorial-compositions--dark-contribution",
+    "05-body-sections-dark-contribution-panel--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

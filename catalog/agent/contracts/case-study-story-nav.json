@@ -1,0 +1,109 @@
+{
+  "id": "case-study-story-nav",
+  "component": "CaseStudyStoryNav",
+  "maturity": "candidate",
+  "scope": "page-family",
+  "source_of_truth": "catalog/source/CaseStudyStoryNav.tsx",
+  "required_inputs": [
+    "items",
+    "projectSlug"
+  ],
+  "item_contract": {
+    "required": [
+      "id",
+      "label"
+    ],
+    "optional": [
+      "headingSelector"
+    ]
+  },
+  "states": [
+    "unpinned",
+    "pinned",
+    "active-section"
+  ],
+  "semantics": [
+    "Every item id must resolve to a unique section id on the same page.",
+    "Active state follows scroll position and is exposed with aria-current=location.",
+    "The long-format link is the current page; presentation availability is explicit."
+  ],
+  "accessibility": [
+    "Navigation must have an aria-label.",
+    "Active chapter uses aria-current=location.",
+    "Unavailable presentation state uses aria-disabled.",
+    "Respect prefers-reduced-motion for horizontal active-item scrolling."
+  ],
+  "constraints": [
+    "Do not use for global navigation.",
+    "Do not invent missing section anchors.",
+    "Do not change project-specific alignment behavior without regression-testing both existing consumers."
+  ],
+  "verification": [
+    "Verify every configured id exists in the DOM.",
+    "Click every chapter link and verify the target is not obscured by sticky navigation.",
+    "Verify active state updates while scrolling.",
+    "Verify sticky pinned state.",
+    "Verify horizontal chapter scroller remains usable at 390px.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "usage_class": "reuse",
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "use_when": [
+    "A long-form case study has stable chapter anchors",
+    "The page needs active-section tracking and sticky chapter navigation"
+  ],
+  "do_not_use_when": [
+    "The page is not a long-form case study",
+    "Sections do not have stable unique IDs",
+    "The requested navigation is global site navigation"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "items": {
+        "required": true,
+        "type": "CaseStudyStoryNavItem[]"
+      },
+      "projectSlug": {
+        "required": true,
+        "type": "string"
+      },
+      "projectName": {
+        "required": false,
+        "type": "string"
+      },
+      "presentationHref": {
+        "required": false,
+        "type": "string | null"
+      },
+      "presentationLabel": {
+        "required": false,
+        "type": "string"
+      },
+      "presentationSoonLabel": {
+        "required": false,
+        "type": "string"
+      },
+      "ariaLabel": {
+        "required": false,
+        "type": "string"
+      },
+      "resolveSectionTop": {
+        "required": false,
+        "type": "(id: string) => number | null"
+      }
+    }
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "02-navigation-right-edge-story-navigation--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

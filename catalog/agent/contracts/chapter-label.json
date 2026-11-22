@@ -1,0 +1,62 @@
+{
+  "id": "case-study-chapter-label",
+  "component": "CaseStudyChapterLabel",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "page-family",
+  "source_of_truth": "catalog/source-styles/case-study-chapter-label.css",
+  "required_inputs": [
+    "chapter number",
+    "label text"
+  ],
+  "states": [
+    "default"
+  ],
+  "visual_contract": [
+    "Plus Jakarta Sans",
+    "11px",
+    "700",
+    "1.1px letter spacing",
+    "uppercase"
+  ],
+  "constraints": [
+    "Use the pds-case-study-chapter-label class.",
+    "Color and section spacing remain consumer-owned.",
+    "Do not create page-local label typography."
+  ],
+  "verification": [
+    "Verify computed typography at 1440px, 768px, and 390px.",
+    "Verify chapter wording and numbering remain product-owned.",
+    "Run design-system registry validation."
+  ],
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A case-study chapter needs its numbered eyebrow/label"
+  ],
+  "use_when": [
+    "A case-study chapter needs its numbered eyebrow/label"
+  ],
+  "do_not_use_when": [
+    "The text is not a chapter label"
+  ],
+  "api": {
+    "class": "pds-case-study-chapter-label",
+    "element": "span or p",
+    "modifiers": []
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "05-body-sections-chapter-label--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

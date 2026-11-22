@@ -1,0 +1,51 @@
+{
+  "id": "foundation-tokens",
+  "component": "FoundationTokens",
+  "catalog_status": "reference-demo-not-packaged",
+  "source_of_truth": "tokens/foundations.json",
+  "maturity": "candidate",
+  "usage_class": "local",
+  "use_when": [
+    "Foundations provide semantic values across case studies"
+  ],
+  "do_not_use_when": [
+    "Individual styles or arbitrary hardcoded values do not define shared semantics"
+  ],
+  "api": {
+    "status": "not-stabilized-for-external-use",
+    "kind": "foundation"
+  },
+  "accessibility": [
+    "Use semantic HTML and accessible names",
+    "Verify keyboard behavior and focus visibility",
+    "Respect reduced-motion preferences"
+  ],
+  "responsive": [
+    "Check desktop, tablet and narrow mobile"
+  ],
+  "verification": [
+    "Confirm Storybook story renders",
+    "Check relevant interactions with keyboard",
+    "Check no document-level horizontal overflow",
+    "Do not claim package export or independent agent reuse yet"
+  ],
+  "agent_policy": {
+    "discover": true,
+    "reuse_requires": "Stable API, reviewed contract, and independent consumer verification",
+    "extension_requires_human_review": true,
+    "stop_on": "Ambiguous ownership or unsupported claims"
+  },
+  "storybook_story_ids": [
+    "01-foundations-tokens--colors",
+    "01-foundations-tokens--typography",
+    "01-foundations-tokens--spacing",
+    "01-foundations-tokens--layout-and-breakpoints",
+    "01-foundations-tokens--radius-and-elevation"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "LOCAL_EXAMPLE_ONLY",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

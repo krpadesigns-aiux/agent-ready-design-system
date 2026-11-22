@@ -1,0 +1,78 @@
+{
+  "id": "case-study-lightbox",
+  "component": "CaseStudyImageLightbox",
+  "catalog_status": "packaged-react-0.2.0-rc.0",
+  "source_of_truth": "src/CaseStudyImageLightbox.tsx",
+  "maturity": "candidate",
+  "usage_class": "reuse",
+  "use_when": [
+    "Artifact images need focusable zoom and gallery navigation"
+  ],
+  "do_not_use_when": [
+    "Simple inline images need no modal viewer"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "images": {
+        "type": "CaseStudyLightboxImage[]",
+        "required": true
+      },
+      "activeIndex": {
+        "type": "number | null",
+        "required": true
+      },
+      "onSelect": {
+        "type": "(index:number)=>void",
+        "required": true
+      },
+      "onClose": {
+        "type": "()=>void",
+        "required": true
+      }
+    }
+  },
+  "accessibility": [
+    "Use semantic HTML and accessible names",
+    "Verify keyboard behavior and focus visibility",
+    "Respect reduced-motion preferences"
+  ],
+  "responsive": [
+    "Check desktop, tablet and narrow mobile"
+  ],
+  "verification": [
+    "Run fresh installed package React render smoke",
+    "Render Storybook at 1440px, 768px and 390px",
+    "Check keyboard focus and mouse interactions",
+    "Test semantic labels and mobile overflow",
+    "Verify external content claims and asset rights",
+    "Verify focus returns to opener on close",
+    "Verify Escape, left/right arrow and zoom controls"
+  ],
+  "agent_policy": {
+    "discover": true,
+    "reuse_requires": "Stable API, reviewed contract, and independent consumer verification",
+    "extension_requires_human_review": true,
+    "stop_on": "Ambiguous ownership or unsupported claims"
+  },
+  "storybook_story_ids": [
+    "06-interactive-storytelling-patterns--case-study-lightbox"
+  ],
+  "agent_readiness": {
+    "phase": "packaged-rc-pending-independent-evaluation",
+    "allowed_action": "REUSE_WITH_VERIFICATION",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+  },
+  "consumption": {
+    "package": "@krpadesigns/portfolio-design-system",
+    "styles": "@krpadesigns/portfolio-design-system/styles.css",
+    "candidate_version": "0.2.0-rc.0"
+  },
+  "constraints": [
+    "Images must have accessible alt text",
+    "Do not inject untrusted HTML",
+    "Focus must return to opener on close",
+    "Zoom must not overflow document viewport"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "image-carousel",
+  "component": "ImageCarousel",
+  "catalog_status": "reference-demo-not-packaged",
+  "source_of_truth": "stories/Interactions.stories.tsx",
+  "maturity": "candidate",
+  "usage_class": "local",
+  "use_when": [
+    "A set of evidence images warrants user-controlled sequential navigation"
+  ],
+  "do_not_use_when": [
+    "The gallery should be shown as an accessible grid rather than hiding context"
+  ],
+  "api": {
+    "status": "not-stabilized-for-external-use",
+    "kind": "react-demo"
+  },
+  "accessibility": [
+    "Focus-visible controls, aria-labels and active announcement",
+    "Keyboard Tab and Enter/Space for prev/next and dots"
+  ],
+  "responsive": [
+    "Check at 1440, 768 and 390 pixels"
+  ],
+  "verification": [
+    "Check sequential next/previous and dot selection",
+    "Verify wraparound and focus visibility",
+    "No document-level overflow"
+  ],
+  "agent_policy": {
+    "discover": true,
+    "reuse_requires": "Reviewed API plus consumer verification",
+    "extension_requires_human_review": true
+  },
+  "storybook_story_ids": [
+    "06-interactive-storytelling-patterns--image-carousel"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "LOCAL_EXAMPLE_ONLY",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

@@ -1,0 +1,11 @@
+import React from "react";
+import type {Meta,StoryObj} from "@storybook/react-vite";
+import {EditorialSection,ProjectCard,sampleMetrics} from "../catalog/Showcase";
+import {ProofStrip} from "@krpadesigns/portfolio-design-system";
+const metrics=sampleMetrics.map((item,index)=>({id:String(index),...item}));
+const meta={title:"04 Metrics and Evidence/Proof and Impact",parameters:{catalogStatus:"Portfolio-derived demo; not packaged",sourceFile:"src/components/home-v2/ProofStrip.tsx; src/data/homepageV2.ts"}} satisfies Meta;
+export default meta;type Story=StoryObj<typeof meta>;
+export const ThreeHomepageProofCards:Story={render:()=><ProofStrip items={metrics}/>};
+export const SingleMetricVariant:Story={render:()=><div style={{maxWidth:360}}><ProofStrip items={[metrics[0]]}/></div>};
+export const BeforeAfterImpact:Story={render:()=><EditorialSection layout="comparison"/>};
+export const EvidenceLedProject:Story={render:()=><ProjectCard variant="metrics"/>};

@@ -1,0 +1,72 @@
+{
+  "id": "case-study-chapter-title",
+  "component": "CaseStudyChapterTitle",
+  "maturity": "candidate",
+  "usage_class": "reuse",
+  "scope": "page-family",
+  "source_of_truth": "catalog/source-styles/case-study-chapter-title.css",
+  "required_inputs": [
+    "title text"
+  ],
+  "states": [
+    "default",
+    "overview",
+    "discovery",
+    "long",
+    "wide-long"
+  ],
+  "visual_contract": [
+    "Outfit",
+    "600 weight",
+    "1.12 line height",
+    "-0.03em tracking",
+    "responsive wrapping"
+  ],
+  "constraints": [
+    "Import shared chapter-title CSS; apply pds-case-study-chapter-title to an h2.",
+    "New consumers wrap naturally; legacy Slingshot/CHESTER desktop nowrap and size modifiers remain compatibility variants.",
+    "Overview/discovery/long/wide-long size variants preserve approved legacy content; do not choose by project name."
+  ],
+  "verification": [
+    "Verify desktop 1440px title wrapping.",
+    "Verify tablet 768px and mobile 390px natural wrapping.",
+    "Verify no document overflow.",
+    "Regression-test Slingshot when the contract is extended.",
+    "Run design-system registry validation."
+  ],
+  "api": {
+    "element": "h2",
+    "class": "pds-case-study-chapter-title",
+    "modifiers": [
+      "overview",
+      "discovery",
+      "long",
+      "wide-long"
+    ]
+  },
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A case-study chapter needs the established title hierarchy"
+  ],
+  "use_when": [
+    "A case-study chapter needs the established title hierarchy"
+  ],
+  "do_not_use_when": [
+    "The text is not a chapter-level h2; use local narrative hierarchy."
+  ],
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "05-body-sections-chapter-title--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

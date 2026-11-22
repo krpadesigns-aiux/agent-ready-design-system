@@ -1,0 +1,51 @@
+{
+  "id": "portfolio-contact",
+  "component": "HomeV2Contact",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "site",
+  "source_of_truth": "catalog/source/HomeV2Contact.tsx",
+  "required_inputs": [],
+  "states": [
+    "default"
+  ],
+  "constraints": [
+    "Use as the canonical portfolio closing contact/footer surface unless the page documents an exception.",
+    "Do not use legacy portfolio Contact for new pages."
+  ],
+  "verification": [
+    "Verify CTA/link behavior.",
+    "Verify desktop/tablet/mobile layout.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A portfolio page needs the canonical closing contact/footer surface"
+  ],
+  "use_when": [
+    "A portfolio page needs the canonical closing contact/footer surface"
+  ],
+  "do_not_use_when": [
+    "A documented product/legal page requires a different footer"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {}
+  },
+  "catalog_status": "public-safe-adaptation",
+  "public_note": "Public-safe composition adaptation. Not identical to private portfolio implementation.",
+  "storybook_story_ids": [
+    "08-footer-portfolio-contact--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "LOCAL_EXAMPLE_ONLY",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

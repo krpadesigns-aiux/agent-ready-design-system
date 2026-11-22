@@ -1,0 +1,51 @@
+{
+  "id": "back-to-top",
+  "component": "BackToTop",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "site",
+  "source_of_truth": "catalog/source/BackToTop.tsx",
+  "required_inputs": [],
+  "states": [
+    "hidden",
+    "visible"
+  ],
+  "accessibility": [
+    "Button has an accessible label and title.",
+    "Activation scrolls to page top."
+  ],
+  "constraints": [
+    "Use on long portfolio pages when consistent with the page shell."
+  ],
+  "verification": [
+    "Verify visibility threshold behavior.",
+    "Verify click returns to top.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A long portfolio page benefits from the standard back-to-top control"
+  ],
+  "use_when": [
+    "A long portfolio page benefits from the standard back-to-top control"
+  ],
+  "do_not_use_when": [
+    "The page is short enough that the control adds no value"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {}
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "02-navigation-back-to-top--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "portfolio-navigation",
+  "component": "Navigation",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "site",
+  "source_of_truth": "catalog/source/Navigation.tsx",
+  "required_inputs": [],
+  "states": [
+    "default",
+    "scrolled",
+    "work-menu-open",
+    "mobile-work-menu-open"
+  ],
+  "semantics": [
+    "Primary portfolio navigation is shared across pages.",
+    "Project navigation data comes from the shared navigation source, not page-local copies."
+  ],
+  "accessibility": [
+    "Primary nav has an aria-label.",
+    "Work menu button exposes aria-expanded and aria-haspopup.",
+    "Escape and outside pointer interaction close the menu.",
+    "Icon-only utilities have accessible labels."
+  ],
+  "constraints": [
+    "Do not create a page-specific replacement header.",
+    "Do not fork mobile navigation into a separate new component."
+  ],
+  "verification": [
+    "Verify desktop and mobile navigation.",
+    "Verify keyboard Escape closes the menu.",
+    "Verify active page state.",
+    "Verify 390px layout without document overflow.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "use_when": [
+    "A portfolio page needs the global header/navigation"
+  ],
+  "do_not_use_when": [
+    "The surface is not part of the portfolio site"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "active": {
+        "required": false,
+        "type": "\"home\" | \"about\" | \"playbooks\""
+      },
+      "showForAgents": {
+        "required": false,
+        "type": "boolean"
+      }
+    }
+  },
+  "catalog_status": "public-safe-adaptation",
+  "public_note": "Public-safe composition adaptation. Not identical to private portfolio implementation.",
+  "storybook_story_ids": [
+    "02-navigation-global-navigation--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "LOCAL_EXAMPLE_ONLY",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

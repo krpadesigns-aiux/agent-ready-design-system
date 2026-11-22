@@ -1,0 +1,131 @@
+@import "./tokens/styles.css";
+
+.pds-table-wrap {
+  overflow-x: auto;
+  margin-top: 28px;
+  border: 1px solid var(--pds-color-portfolio-line);
+  border-radius: 16px;
+  background: var(--pds-color-surface);
+}
+
+.pds-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pds-table th,
+.pds-table td {
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--pds-color-portfolio-line);
+  text-align: left;
+  vertical-align: top;
+  color: #4f524d;
+  font: 450 13px/1.5 var(--pds-font-body);
+}
+
+.pds-table thead th {
+  background: #f6f4ee;
+  color: var(--pds-color-portfolio-ink);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.pds-table tbody th {
+  color: var(--pds-color-portfolio-ink);
+  font-weight: 650;
+}
+
+.pds-table tbody tr:last-child th,
+.pds-table tbody tr:last-child td { border-bottom: 0; }
+
+.pds-table-toggle-cell {
+  padding: 0 !important;
+  border-bottom: 0 !important;
+  background: #f6f4ee;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.pds-table-toggle {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--pds-color-portfolio-ink);
+  font: 700 12px/1.4 var(--pds-font-body);
+  text-align: center;
+  cursor: pointer;
+}
+
+.pds-table-toggle:hover { background: #eeece5; }
+
+/* Shared case-study Key Decisions accordion. */
+.pds-key-decisions-accordion { display:grid; gap:16px; }
+.pds-key-decision { margin:0; padding:0; border:0; background:transparent; }
+.pds-key-decision-summary {
+  min-height:118px; padding:24px 29px; border:1px solid #dce5da; border-radius:25px;
+  background:#f8f2e7; display:flex; align-items:center; justify-content:space-between;
+  gap:18px; cursor:pointer; list-style:none;
+}
+.pds-key-decision-summary::-webkit-details-marker { display:none; }
+.pds-key-decision[open] > .pds-key-decision-summary {
+  border-radius:25px 25px 0 0; border-bottom-color:#b99a58; background:#f5df47;
+}
+.pds-key-decision-summary:focus-visible { outline:3px solid #31563c; outline-offset:-4px; }
+.pds-key-decision-heading { min-width:0; }
+.pds-key-decision .pds-key-decision-summary small {
+  display:block; margin-bottom:6px; color:#5e5316;
+  font:800 10px/1.2 'Plus Jakarta Sans',sans-serif; letter-spacing:.1em; text-transform:uppercase;
+}
+.pds-key-decision .pds-key-decision-summary h3 {
+  margin:0; color:#24251f; font:600 clamp(23px,2.4vw,32px)/1.1 Outfit,sans-serif;
+  letter-spacing:-.025em;
+}
+.pds-key-decision-chevron {
+  display:grid; place-items:center; flex:0 0 26px; width:26px; height:26px;
+  border:0; background:transparent; color:#171817; font-size:0; line-height:1; transform:none; transition:none;
+}
+.pds-key-decision-chevron::after {
+  content:"↓"; display:block; font:500 24px/1 Outfit,sans-serif; text-align:center;
+}
+.pds-key-decision[open] .pds-key-decision-chevron::after { content:"↑"; }
+.pds-key-decision-body {
+  padding:18px 18px 22px; border:0; border-radius:0 0 25px 25px;
+  background:#fff; overflow:hidden;
+}
+@media (max-width:700px) {
+  .pds-key-decision-summary { min-height:96px; padding:20px 18px; }
+  .pds-key-decision-body { padding:14px 12px 18px; }
+}
+
+.pds-table-wrap:focus-visible, .pds-table-toggle:focus-visible {
+  outline: 3px solid #31563c;
+  outline-offset: -3px;
+}
+
+
+/* Responsive proof / metric strip: portable component style. */
+.pds-proof-strip { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; font-family: var(--pds-font-body); }
+.pds-proof-card { min-width:0; display:flex; flex-direction:column; min-height:155px; padding:22px; border:1px solid var(--pds-color-portfolio-line); border-radius: 17px; background:var(--pds-color-surface); color:var(--pds-color-portfolio-ink); }
+.pds-proof-value { font:650 clamp(22px,2.2vw,32px)/1.1 var(--pds-font-display); letter-spacing:-.03em; }
+.pds-proof-label { margin:12px 0 6px; font-size:13px; font-weight:700; }
+.pds-proof-detail { font:400 11px/1.5 var(--pds-font-body); color:var(--pds-color-ink-secondary); }
+.pds-proof-strip--inline { gap:0; }
+.pds-proof-strip--inline .pds-proof-card { min-height:0; padding:16px; border-radius:0; border-left:0; border-right:0; }
+.pds-proof-strip--inline .pds-proof-card:first-child { border-left:1px solid var(--pds-color-portfolio-line); border-radius:14px 0 0 14px; }
+.pds-proof-strip--inline .pds-proof-card:last-child { border-right:1px solid var(--pds-color-portfolio-line); border-radius:0 14px 14px 0; }
+@media(max-width:850px) { .pds-proof-strip { grid-template-columns:1fr; } .pds-proof-strip--inline .pds-proof-card { border:1px solid var(--pds-color-portfolio-line); border-radius:12px; } }
+
+/* Fullscreen case-study artifact lightbox (candidate extract). */
+.csImageLightbox{position:fixed;inset:0;z-index:100000;background:#111e;display:grid;place-items:center;padding:24px}
+.csImageLightboxPanel{background:#161918;color:#fff;width:min(1100px,95vw);height:min(760px,93vh);display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 22px 60px #0009}
+.csImageLightboxToolbar{padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #fff2}
+.csImageLightboxTitle{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:13px;font-weight:700}.csImageLightboxTitle small{font-size:10px;color:#bbb}
+.csImageLightboxButtons{display:flex;align-items:center;gap:6px}.csImageLightboxButtons button{border:1px solid #fff4;border-radius:6px;background:#ffffff12;color:#fff;padding:7px 10px;min-width:32px;cursor:pointer}.csImageLightboxButtons button:focus-visible{outline:2px solid #f5df47}.csImageLightboxButtons button:disabled{opacity:.35}
+.csImageLightboxDivider{height:25px;width:1px;background:#fff3;margin:0 4px}
+.csImageLightboxCanvas{flex:1;min-height:0;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:15px}.csImageLightboxCanvas img{display:block;object-fit:contain}
+
+@media(max-width:520px){.csImageLightbox{padding:8px}.csImageLightboxToolbar{flex-wrap:wrap}.csImageLightboxButtons{flex-wrap:wrap}}

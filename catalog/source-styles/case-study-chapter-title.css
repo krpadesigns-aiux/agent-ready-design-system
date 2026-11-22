@@ -1,0 +1,112 @@
+/* Shared portfolio case-study chapter-title typography.
+   Buyer’s Agent is the visual reference. Slingshot opts in without changing Buyer’s Agent. */
+.slingshotCaseStudyRoot h2.pds-case-study-chapter-title {
+  font-family: var(--font-outfit), "Outfit", sans-serif !important;
+  font-size: clamp(38px, 4.15vw, 60px) !important;
+  font-weight: 600 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  max-width: none;
+}
+
+@media (min-width: 1100px) {
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title {
+    white-space: nowrap;
+  }
+
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title--overview {
+    font-size: 54px !important;
+  }
+
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title--discovery {
+    font-size: 54px !important;
+    white-space: normal;
+  }
+
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title--long {
+    font-size: 47px !important;
+  }
+
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title--wide-long {
+    font-size: 49px !important;
+  }
+}
+
+@media (max-width: 1099px) {
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title {
+    font-size: clamp(36px, 6vw, 54px) !important;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .slingshotCaseStudyRoot h2.pds-case-study-chapter-title {
+    font-size: clamp(32px, 9vw, 42px) !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Legacy Slingshot title selectors use higher specificity and !important.
+   IDs make the shared chapter-title contract authoritative without changing section layout. */
+.slingshotCaseStudyRoot .slingshotLegacy h2.ffb-id-94ufoo59.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-discovery-sticky-title.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-exploration-title.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-discovery-draft-title.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-kd-v3-title.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-validation-v2-title.pds-case-study-chapter-title,
+.slingshotCaseStudyRoot #slingshot-impact-next-draft-title.pds-case-study-chapter-title {
+  font-family: var(--font-outfit), "Outfit", sans-serif !important;
+  font-weight: 600 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+}
+
+@media (min-width: 1100px) {
+  .slingshotCaseStudyRoot .slingshotLegacy h2.ffb-id-94ufoo59.pds-case-study-chapter-title {
+    font-size: 54px !important;
+    white-space: nowrap !important;
+  }
+  .slingshotCaseStudyRoot #slingshot-discovery-sticky-title.pds-case-study-chapter-title {
+    font-size: 54px !important;
+    white-space: normal !important;
+  }
+  .slingshotCaseStudyRoot #slingshot-exploration-title.pds-case-study-chapter-title {
+    font-size: 47px !important;
+    white-space: nowrap !important;
+  }
+  .slingshotCaseStudyRoot #slingshot-discovery-draft-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-kd-v3-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-validation-v2-title.pds-case-study-chapter-title {
+    font-size: 59.76px !important;
+    white-space: nowrap !important;
+  }
+  .slingshotCaseStudyRoot #slingshot-impact-next-draft-title.pds-case-study-chapter-title {
+    font-size: 49px !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 1099px) {
+  .slingshotCaseStudyRoot .slingshotLegacy h2.ffb-id-94ufoo59.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-discovery-sticky-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-exploration-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-discovery-draft-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-kd-v3-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-validation-v2-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-impact-next-draft-title.pds-case-study-chapter-title {
+    font-size: clamp(36px, 6vw, 54px) !important;
+    white-space: normal !important;
+  }
+}
+@media (max-width: 600px) {
+  .slingshotCaseStudyRoot .slingshotLegacy h2.ffb-id-94ufoo59.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-discovery-sticky-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-exploration-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-discovery-draft-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-kd-v3-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-validation-v2-title.pds-case-study-chapter-title,
+  .slingshotCaseStudyRoot #slingshot-impact-next-draft-title.pds-case-study-chapter-title {
+    font-size: clamp(32px, 9vw, 42px) !important;
+    line-height: 1.1 !important;
+  }
+}

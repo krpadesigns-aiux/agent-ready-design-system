@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "id": "portfolio-page-composition",
+  "name": "Portfolio page composition contract",
+  "applies_to": [
+    "new portfolio pages",
+    "new long-form case studies"
+  ],
+  "goal": "Compose new pages from canonical shared primitives without inventing parallel visual systems.",
+  "default_sequence": [
+    {
+      "slot": "navigation",
+      "component": "Navigation",
+      "classification": "reuse",
+      "required": true
+    },
+    {
+      "slot": "hero",
+      "classification": "local",
+      "required": true
+    },
+    {
+      "slot": "story-navigation",
+      "component": "CaseStudyStoryNav",
+      "classification": "reuse",
+      "required": "long-form case study with stable anchors"
+    },
+    {
+      "slot": "chapters",
+      "classification": "mixed",
+      "required": true
+    },
+    {
+      "slot": "closing-contact",
+      "component": "HomeV2Contact",
+      "classification": "reuse",
+      "required": "portfolio pages unless documented exception"
+    },
+    {
+      "slot": "back-to-top",
+      "component": "BackToTop",
+      "classification": "reuse",
+      "required": "long pages using portfolio shell"
+    }
+  ],
+  "chapter_contract": {
+    "label": "Use pds-case-study-chapter-label for chapter numbering/eyebrow typography.",
+    "title": "Import shared chapter-title CSS and apply pds-case-study-chapter-title to an h2; new consumers wrap naturally.",
+    "content": "Narrative, evidence, images, and product semantics stay local.",
+    "shared_components": [
+      "KeyDecisionsAccordion",
+      "ExpandableArchitecture",
+      "ResponsiveTable"
+    ]
+  },
+  "agent_decision_order": [
+    "reuse",
+    "extend",
+    "local",
+    "create-new-shared-only-with-evidence"
+  ],
+  "prohibitions": [
+    "Do not create a page-specific navigation/header when Navigation fits.",
+    "Do not copy shared component CSS into a consumer.",
+    "Do not promote project-specific content into a shared primitive solely for visual reuse.",
+    "Do not select deprecated components for new pages.",
+    "Do not infer undocumented design tokens from repeated legacy values.",
+    "Do not deploy as a side effect of page composition work."
+  ],
+  "verification": [
+    "Run TypeScript.",
+    "Run design-system registry validation.",
+    "Render desktop 1440px, tablet 768px, and mobile 390px.",
+    "Verify no document-level horizontal overflow.",
+    "Verify shared interactions by keyboard.",
+    "Compare existing consumers when a shared component or extend-status pattern changes."
+  ]
+}

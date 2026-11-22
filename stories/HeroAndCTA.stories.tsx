@@ -1,0 +1,13 @@
+import React from "react";
+import type {Meta,StoryObj} from "@storybook/react-vite";
+import {HeroActionDeck,HeroComposition} from "../catalog/Showcase";
+const meta={title:"03 Hero and CTA/Portfolio Hero",parameters:{catalogStatus:"Portfolio-derived demo; not packaged",sourceFile:"src/components/portfolio/HeroCards.tsx; src/components/home-v2/HomeV2Hero.tsx"}} satisfies Meta;
+export default meta; type Story=StoryObj<typeof meta>;
+export const HomepageHero:Story={render:()=><HeroComposition/>};
+export const ThreeInteractiveHeroCards:Story={render:()=><HeroActionDeck/>};
+export const AssistantCard:Story={render:()=><div className="ard-hero-card ard-hero-assistant" style={{maxWidth:410}}><span className="ard-eyebrow">PORTFOLIO ASSISTANT</span><span className="ard-hero-art">✦</span><strong>Ask About My Work</strong><span>Assistant entry card with action, prompts and focus affordances.</span></div>};
+export const ResearchDesignBuildCard:Story={render:()=><div className="ard-hero-card ard-hero-build" style={{maxWidth:410}}><span className="ard-eyebrow">SELECTED WORK</span><span className="ard-hero-art">◆ ▰ ◇</span><strong>Research + Design + Build</strong><span>Selected-work shortcut and capability story.</span></div>};
+export const AboutMeShowreelCard:Story={render:()=><div className="ard-hero-card ard-hero-about" style={{maxWidth:410}}><span className="ard-eyebrow">60 SEC</span><span className="ard-hero-art">▶</span><strong>About Me / Showreel</strong><span>Media and personal introduction entry.</span></div>};
+export const CTAStates:Story={render:()=><div className="ard-actions" style={{padding:20}}><a href="#cta-example">Explore project →</a><a href="#cta-example">Watch walkthrough ↗</a></div>};
+
+export const CaseStudyHero:Story={render:()=><section style={{padding:38,background:"#f8f2e7",borderRadius:20,color:"#171817"}}><span style={{fontSize:11,fontWeight:800,letterSpacing:".12em"}}>CASE STUDY · RESEARCH TO PRODUCT</span><h1 style={{fontFamily:"Outfit",fontSize:"clamp(36px,5vw,66px)",lineHeight:1.05,letterSpacing:"-.04em",maxWidth:920,margin:"20px 0"}}>Designing a trustworthy experience for complex decisions.</h1><p style={{maxWidth:710,lineHeight:1.7}}>A case-study hero composes project context, a concise challenge, role information, and supporting evidence. The content here is illustrative and not an outcome claim.</p><div style={{display:"flex",gap:10,marginTop:24,flexWrap:"wrap"}}>{["Product strategy","Interaction design","Systems thinking"].map(x=><span key={x} style={{border:"1px solid #cbc7b9",padding:"7px 12px",borderRadius:30,fontSize:12}}>{x}</span>)}</div></section>};

@@ -1,0 +1,114 @@
+/* Shared dark contribution surface.
+   What I Delivered is the visual benchmark; layout remains owned by each section. */
+.slingshotCaseStudyRoot .pds-dark-contribution {
+  background: #17191a;
+  border: 1px solid #343637;
+  border-radius: 14px;
+  padding: 24px;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.slingshotCaseStudyRoot .pds-dark-contribution h3 {
+  font-family: var(--font-outfit), "Outfit", sans-serif;
+  color: #fff;
+}
+
+.slingshotCaseStudyRoot .pds-dark-contribution.pds-dark-contribution--compact h3 {
+  margin: 0 0 16px;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff !important;
+}
+
+.slingshotCaseStudyRoot .pds-dark-contribution.pds-dark-contribution--compact li {
+  color: #fff;
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.slingshotCaseStudyRoot .pds-dark-contribution--delivered > h3 {
+  margin: 0 0 24px;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+  .slingshotCaseStudyRoot .pds-dark-contribution {
+    padding: 20px;
+  }
+
+  .slingshotCaseStudyRoot .pds-dark-contribution.pds-dark-contribution--compact h3 {
+    font-size: 28px;
+  }
+
+  .slingshotCaseStudyRoot .pds-dark-contribution--delivered > h3 {
+    font-size: 28px;
+  }
+}
+
+/* Legacy Section 02 compatibility: its old overview-card list typography still uses !important. */
+.slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution.pds-dark-contribution--compact li {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+
+/* Section 02's legacy nested overview card must not double-pad the shared dark panel. */
+.slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution > .slingshotOverviewInfoCard {
+  padding: 0 !important;
+}
+
+/* Production legacy compatibility: older Slingshot section selectors use !important.
+   These selectors only cover the four approved dark contribution surfaces. */
+.slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution,
+.slingshotCaseStudyRoot .slingshotDiscoveryStickyDraft .slingshotDiscoveryStickyLeft .slingshotDiscoveryWhatIDid.pds-dark-contribution,
+.slingshotCaseStudyRoot .slingshotAIWhatIDid.pds-dark-contribution,
+.slingshotCaseStudyRoot #slingshot-delivered-draft-v2.pds-dark-contribution {
+  background: #17191a !important;
+  border: 1px solid #343637 !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  color: #fff !important;
+}
+
+.slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution h3,
+.slingshotCaseStudyRoot .slingshotDiscoveryStickyDraft .slingshotDiscoveryStickyLeft .slingshotDiscoveryWhatIDid.pds-dark-contribution h3,
+.slingshotCaseStudyRoot .slingshotAIWhatIDid.pds-dark-contribution h3 {
+  margin: 0 0 16px !important;
+  font-family: var(--font-outfit), "Outfit", sans-serif !important;
+  font-size: 34px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+}
+
+.slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution li,
+.slingshotCaseStudyRoot .slingshotDiscoveryStickyDraft .slingshotDiscoveryStickyLeft .slingshotDiscoveryWhatIDid.pds-dark-contribution li,
+.slingshotCaseStudyRoot .slingshotAIWhatIDid.pds-dark-contribution li {
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 760px) {
+  .slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution,
+  .slingshotCaseStudyRoot .slingshotDiscoveryStickyDraft .slingshotDiscoveryStickyLeft .slingshotDiscoveryWhatIDid.pds-dark-contribution,
+  .slingshotCaseStudyRoot .slingshotAIWhatIDid.pds-dark-contribution,
+  .slingshotCaseStudyRoot #slingshot-delivered-draft-v2.pds-dark-contribution {
+    padding: 20px !important;
+  }
+  .slingshotCaseStudyRoot .slingshotMovedWhatIDid.pds-dark-contribution h3,
+  .slingshotCaseStudyRoot .slingshotDiscoveryStickyDraft .slingshotDiscoveryStickyLeft .slingshotDiscoveryWhatIDid.pds-dark-contribution h3,
+  .slingshotCaseStudyRoot .slingshotAIWhatIDid.pds-dark-contribution h3 {
+    font-size: 28px !important;
+  }
+}

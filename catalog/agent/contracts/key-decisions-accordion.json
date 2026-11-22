@@ -1,0 +1,120 @@
+{
+  "id": "key-decisions-accordion",
+  "component": "KeyDecisionsAccordion",
+  "maturity": "candidate",
+  "scope": "page-family",
+  "source_of_truth": "src/KeyDecisionsAccordion.tsx",
+  "required_inputs": [
+    "items"
+  ],
+  "item_contract": {
+    "required": [
+      "id",
+      "eyebrow",
+      "title"
+    ],
+    "content_rule": "Provide content or contentHtml.",
+    "optional": [
+      "defaultOpen",
+      "className",
+      "summaryClassName",
+      "bodyClassName",
+      "chevronClassName"
+    ]
+  },
+  "states": [
+    "open",
+    "closed"
+  ],
+  "semantics": [
+    "Use native details/summary disclosure semantics.",
+    "Expose the collection as an aria-labelled group.",
+    "Product-specific content remains outside the shared shell."
+  ],
+  "visual_contract": [
+    "Collapsed header is beige.",
+    "Expanded header is yellow by default; existing Slingshot theme overrides it to dark with white text.",
+    "Expanded content panel is white.",
+    "Headers and panels retain rounded corners.",
+    "Visible keyboard focus is required."
+  ],
+  "accessibility": [
+    "Summary must remain keyboard-focusable.",
+    "Enter and Space must toggle disclosure.",
+    "Chevron is decorative and aria-hidden."
+  ],
+  "constraints": [
+    "No iframe implementation.",
+    "No nested accordion scrolling.",
+    "Do not duplicate shell CSS in a consumer.",
+    "Do not change existing consumer default-open states without explicit approval.",
+    "contentHtml is trusted authored HTML only; this component does not sanitize input.",
+    "Item IDs must be unique; defaultOpen is read on mount. Prefer content over contentHtml; HTML wins when both are supplied."
+  ],
+  "known_consumer_expectations": {
+    "buyers-agent": {
+      "decision_count": 3,
+      "default_open_count": 3
+    },
+    "slingshot": {
+      "decision_count": 3,
+      "default_open_count": 1
+    }
+  },
+  "verification": [
+    "Render at 1440px, 768px, and 390px.",
+    "Verify expected decision count and default-open count.",
+    "Verify Enter and Space toggling.",
+    "Verify beige closed, yellow open, and white body computed styles.",
+    "Verify no document horizontal overflow.",
+    "Verify no nested scrolling or iframe.",
+    "Verify referenced images load.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "usage_class": "reuse",
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "use_when": [
+    "A case study presents consequential product decisions or trade-offs",
+    "Progressive disclosure improves scanability",
+    "The content has a stable title plus expandable evidence"
+  ],
+  "do_not_use_when": [
+    "The content is simple static prose",
+    "Nested scrolling or iframe content is required",
+    "The interaction is not semantically a disclosure"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "items": {
+        "required": true,
+        "type": "KeyDecisionAccordionItem[]"
+      },
+      "ariaLabel": {
+        "required": false,
+        "type": "string"
+      },
+      "className": {
+        "required": false,
+        "type": "string"
+      }
+    }
+  },
+  "catalog_status": "packaged-react-v0.1.0",
+  "storybook_story_ids": [
+    "06-interactive-storytelling-key-decisions-accordion--collapsed",
+    "06-interactive-storytelling-key-decisions-accordion--expanded"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "REUSE_WITH_VERIFICATION",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+  },
+  "consumption": {
+    "package": "@krpadesigns/portfolio-design-system",
+    "styles": "@krpadesigns/portfolio-design-system/styles.css"
+  }
+}

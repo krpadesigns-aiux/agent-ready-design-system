@@ -1,0 +1,23 @@
+node_modules/
+dist/
+storybook-static/
+*.tgz
+
+# Local packaging/QA artifacts and generated files
+/verification/tarballs/
+/verification/consumer/node_modules/
+/verification/consumer/package-lock.json
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Local QA captures, machine-specific archives and secrets
+/catalog/qa/
+/verification/consumer/
+/verification/tarballs/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example

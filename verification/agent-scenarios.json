@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "deterministic-policy-regression-not-autonomous-agent-evaluation",
+  "version": "2026-11-22",
+  "scenarios": [
+    {
+      "id": "A01",
+      "task": "Create a semantic, responsive evaluation table in a separate React app",
+      "target": "responsive-table",
+      "evidence": "recorded",
+      "content": "structured",
+      "expected": "REUSE_WITH_VERIFICATION",
+      "notes": "Fresh consumer install required"
+    },
+    {
+      "id": "A02",
+      "task": "Show three verified portfolio proof points",
+      "target": "proof-strip",
+      "evidence": "recorded",
+      "expected": "REUSE_WITH_VERIFICATION",
+      "notes": "Use typed metric data, not fabricated claims"
+    },
+    {
+      "id": "A03",
+      "task": "Zoom evidence images with keyboard navigation",
+      "target": "case-study-lightbox",
+      "assets": "public-safe",
+      "expected": "REUSE_WITH_VERIFICATION",
+      "notes": "Open-state focus behavior must also be checked"
+    },
+    {
+      "id": "A04",
+      "task": "Present case study decision trade-offs with authored React content",
+      "target": "key-decisions-accordion",
+      "content": "trusted-react",
+      "expected": "REUSE_WITH_VERIFICATION"
+    },
+    {
+      "id": "A05",
+      "task": "Render untrusted HTML from a remote response in Key Decisions",
+      "target": "key-decisions-accordion",
+      "content": "untrusted-html",
+      "expected": "STOP",
+      "notes": "Never send untrusted HTML through contentHtml"
+    },
+    {
+      "id": "A06",
+      "task": "Import the current right-side story navigation into an unrelated React app",
+      "target": "case-study-story-nav",
+      "expected": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+      "notes": "Source snapshot is Next-linked, not a package export"
+    },
+    {
+      "id": "A07",
+      "task": "Use three portfolio hero action cards in a new app",
+      "target": "hero-action-deck",
+      "expected": "LOCAL_EXAMPLE_ONLY",
+      "notes": "Documented Storybook reference, no public API"
+    },
+    {
+      "id": "A08",
+      "task": "Use a project visual containing unlicensed employer screenshots",
+      "target": "project-card-variants",
+      "assets": "unlicensed",
+      "expected": "STOP",
+      "notes": "Private visuals cannot be published"
+    },
+    {
+      "id": "A09",
+      "task": "Claim business outcome without evidence in a proof card",
+      "target": "proof-strip",
+      "evidence": "unverified-claim",
+      "expected": "STOP",
+      "notes": "Do not fabricate business results"
+    },
+    {
+      "id": "A10",
+      "task": "Pick a new generic alert component that isn't in the system",
+      "target": "alert",
+      "expected": "STOP",
+      "notes": "No matching component: agent must not invent one"
+    },
+    {
+      "id": "A11",
+      "task": "Use product evolution expanding timeline from Storybook in an unrelated project",
+      "target": "product-evolution",
+      "expected": "LOCAL_EXAMPLE_ONLY",
+      "notes": "Demo not exportable"
+    },
+    {
+      "id": "A12",
+      "task": "Reuse category filter tabs from the Storybook in an unrelated project",
+      "target": "project-filter-tabs",
+      "expected": "LOCAL_EXAMPLE_ONLY"
+    },
+    {
+      "id": "A13",
+      "task": "Use foundation color tokens in an agent-generated case-study page",
+      "target": "foundation-tokens",
+      "expected": "LOCAL_EXAMPLE_ONLY",
+      "notes": "Tokens are published as package subpath, but this catalog entry is not a React export"
+    },
+    {
+      "id": "A14",
+      "task": "Attempt to publish entire private portfolio repository as the design system",
+      "target": "responsive-table",
+      "publishPrivateSource": true,
+      "expected": "STOP",
+      "notes": "Never expose private portfolio source"
+    }
+  ]
+}

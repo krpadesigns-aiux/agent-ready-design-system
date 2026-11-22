@@ -1,0 +1,21 @@
+/* Shared portfolio case-study chapter label typography.
+   Layout, spacing, and color remain owned by each case-study section. */
+.caseStudyReview .pds-case-study-chapter-label {
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+/* Legacy case-study styles contain more-specific label rules; the shared label contract is canonical. */
+.caseStudyReview .pds-case-study-chapter-label,
+.caseStudyReview.slingshotCaseStudyRoot .slingshotPage .pds-case-study-chapter-label {
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 1.1px !important;
+  text-transform: uppercase !important;
+}

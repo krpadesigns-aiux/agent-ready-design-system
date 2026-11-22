@@ -1,0 +1,112 @@
+{
+  "id": "runtime-architecture",
+  "component": "ExpandableArchitecture",
+  "maturity": "candidate",
+  "scope": "page-family",
+  "source_of_truth": "catalog/source/ExpandableArchitecture.tsx",
+  "required_inputs": [
+    "nodes",
+    "ariaLabel"
+  ],
+  "node_contract": {
+    "required": [
+      "label",
+      "title"
+    ],
+    "optional": [
+      "technology",
+      "description",
+      "details",
+      "expandedContent",
+      "logos",
+      "tone"
+    ]
+  },
+  "states": [
+    "collapsed",
+    "expanded"
+  ],
+  "semantics": [
+    "Represent comparable architecture layers or nodes, not arbitrary graph edges.",
+    "Use the shared toggle only when at least one node has details or expandedContent.",
+    "Keep product-specific architecture content in the consumer data."
+  ],
+  "accessibility": [
+    "Provide a meaningful ariaLabel.",
+    "Expansion control must expose aria-expanded.",
+    "Decorative logo grouping remains aria-hidden; individual images use empty alt unless meaning is not otherwise present."
+  ],
+  "constraints": [
+    "Do not use as a generic flowchart.",
+    "Do not encode product-specific node copy in the shared component.",
+    "Do not hard-code a consumer-specific column count; derive it from nodes."
+  ],
+  "verification": [
+    "Render all expected nodes at desktop, tablet, and mobile.",
+    "Verify expansion control appears only when expandable content exists.",
+    "Verify expanded/collapsed interaction and aria-expanded.",
+    "Verify no horizontal document overflow.",
+    "Verify image assets load where logos are supplied.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "usage_class": "reuse",
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "use_when": [
+    "A case study needs a compact system or runtime architecture with comparable nodes",
+    "Additional implementation details should be progressively disclosed"
+  ],
+  "do_not_use_when": [
+    "The content requires arbitrary graph topology or edge relationships",
+    "The diagram would need freeform canvas positioning",
+    "The content is only a decorative process illustration"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "id": {
+        "required": false,
+        "type": "string"
+      },
+      "title": {
+        "required": false,
+        "type": "string"
+      },
+      "nodes": {
+        "required": true,
+        "type": "ArchitectureNode[]"
+      },
+      "ariaLabel": {
+        "required": true,
+        "type": "string"
+      },
+      "initiallyExpanded": {
+        "required": false,
+        "type": "boolean"
+      },
+      "accentColor": {
+        "required": false,
+        "type": "string"
+      },
+      "className": {
+        "required": false,
+        "type": "string"
+      },
+      "showDescriptionsInHeader": {
+        "required": false,
+        "type": "boolean"
+      }
+    }
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "04-metrics-and-evidence-architecture-diagram--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

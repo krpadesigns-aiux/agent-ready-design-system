@@ -1,0 +1,80 @@
+{
+  "version": "0.1.0",
+  "tokens": {
+    "color": {
+      "canvas": "#f7f5f2",
+      "ink": "#1a1917",
+      "ink-dim": "#3a3836",
+      "ink-secondary": "#6b6760",
+      "ink-tertiary": "#7e7a76",
+      "accent": "#c9a0a0",
+      "accent-soft": "#f0e8e8",
+      "border": "#e8e4df",
+      "surface": "#ffffff",
+      "float": "#faf9f7",
+      "contribution-surface": "#17191a",
+      "contribution-border": "#343637",
+      "on-dark": "#ffffff",
+      "portfolio-canvas": "#f8f2e7",
+      "portfolio-paper": "#fffdf8",
+      "portfolio-ink": "#171817",
+      "portfolio-muted": "#787a74",
+      "portfolio-line": "#1718171f",
+      "portfolio-highlight": "#f5df47",
+      "portfolio-teal": "#96cccd"
+    },
+    "font": {
+      "display": "var(--font-outfit), \"Outfit\", sans-serif",
+      "body": "var(--font-plus-jakarta-sans), \"Plus Jakarta Sans\", sans-serif"
+    },
+    "type": {
+      "hero": "clamp(2.5rem, 1.75vw + 2.125rem, 3.75rem)",
+      "hero-sub": "clamp(1.875rem, 1.25vw + 1.625rem, 3rem)",
+      "section": "clamp(2rem, 3vw + 0.75rem, 3rem)",
+      "project-title": "clamp(1.375rem, 1.5vw + 0.5rem, 1.875rem)",
+      "body": "clamp(1.0625rem, 0.5vw + 0.875rem, 1.1875rem)",
+      "meta": "clamp(0.75rem, 0.25vw + 0.625rem, 0.875rem)",
+      "chapter": "clamp(38px, 4.15vw, 60px)",
+      "chapter-tablet": "clamp(36px, 6vw, 54px)",
+      "chapter-mobile": "clamp(32px, 9vw, 42px)",
+      "label": "11px",
+      "contribution-title": "34px",
+      "contribution-title-mobile": "28px",
+      "contribution-body": "14px"
+    },
+    "space": {
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "12": "48px",
+      "section": "clamp(4rem, 8vw + 1rem, 12.5rem)",
+      "project": "clamp(3.5rem, 5vw + 0.5rem, 8.75rem)"
+    },
+    "radius": {
+      "panel": "14px",
+      "pill": "999px",
+      "focus": "2px"
+    },
+    "layout": {
+      "wide": "1440px",
+      "gutter": "24px",
+      "gutter-tablet": "32px",
+      "gutter-desktop": "48px",
+      "content": "1372px",
+      "reading": "720px"
+    },
+    "elevation": {
+      "card": "0 2px 14px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)",
+      "card-hover": "0 8px 32px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06)"
+    }
+  },
+  "breakpoints": {
+    "container-tablet": "640px",
+    "container-desktop": "1024px",
+    "chapter-mobile-max": "600px",
+    "chapter-desktop-min": "1100px",
+    "contribution-mobile-max": "760px"
+  }
+}

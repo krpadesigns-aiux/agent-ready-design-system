@@ -1,0 +1,28 @@
+{
+  "decision": "REUSE",
+  "packageVersion": "0.1.0",
+  "section": "Evaluation",
+  "results": [
+    {
+      "width": 1440,
+      "headers": 2,
+      "criteria": 6,
+      "pageOverflow": false,
+      "keyboardScroll": "not exercised"
+    },
+    {
+      "width": 768,
+      "headers": 2,
+      "criteria": 6,
+      "pageOverflow": false,
+      "keyboardScroll": "not exercised"
+    },
+    {
+      "width": 390,
+      "headers": 2,
+      "criteria": 6,
+      "pageOverflow": false,
+      "keyboardScroll": "passed"
+    }
+  ]
+}

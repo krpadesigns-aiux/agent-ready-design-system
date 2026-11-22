@@ -1,0 +1,11 @@
+import React from "react";
+import type {Meta,StoryObj} from "@storybook/react-vite";
+import {EditorialSection} from "../catalog/Showcase";
+const meta={title:"05 Body Sections/Editorial Compositions",parameters:{catalogStatus:"Composition examples; not packaged",sourceFile:"src/components/layout/Section.tsx; src/styles/case-study.css"}} satisfies Meta;
+export default meta;type Story=StoryObj<typeof meta>;
+export const TextOnly:Story={render:()=><EditorialSection layout="text"/>};
+export const TextLeftMediaRight:Story={render:()=><EditorialSection layout="text-media"/>};
+export const MediaLeftTextRight:Story={render:()=><EditorialSection layout="media-text"/>};
+export const BeforeAndAfter:Story={render:()=><EditorialSection layout="comparison"/>};
+export const EvidenceArtifacts:Story={render:()=><EditorialSection layout="evidence"/>};
+export const DarkContribution:Story={render:()=><EditorialSection layout="contribution"/>};

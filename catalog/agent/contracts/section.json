@@ -1,0 +1,71 @@
+{
+  "id": "page-section",
+  "component": "Section",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "site",
+  "source_of_truth": "catalog/source/Section.tsx",
+  "required_inputs": [
+    "children"
+  ],
+  "states": [
+    "contained",
+    "full-width"
+  ],
+  "constraints": [
+    "Use the shared section gap token.",
+    "Use contained=false only for intentional full-width content.",
+    "Do not force legacy case-study structures into this wrapper if it changes layout semantics."
+  ],
+  "verification": [
+    "Verify section spacing and containment.",
+    "Verify optional section id remains unique.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A new section follows normal portfolio vertical rhythm"
+  ],
+  "use_when": [
+    "A new section follows normal portfolio vertical rhythm"
+  ],
+  "do_not_use_when": [
+    "A legacy or full-bleed structure requires different semantics"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "children": {
+        "required": true,
+        "type": "ReactNode"
+      },
+      "className": {
+        "required": false,
+        "type": "string"
+      },
+      "id": {
+        "required": false,
+        "type": "string"
+      },
+      "contained": {
+        "required": false,
+        "type": "boolean"
+      }
+    }
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "05-body-sections-section--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

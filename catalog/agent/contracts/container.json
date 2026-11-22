@@ -1,0 +1,65 @@
+{
+  "id": "page-container",
+  "component": "Container",
+  "maturity": "keep",
+  "usage_class": "reuse",
+  "scope": "site",
+  "source_of_truth": "catalog/source/Container.tsx",
+  "required_inputs": [
+    "children"
+  ],
+  "states": [
+    "default"
+  ],
+  "visual_contract": [
+    "max width 1440px",
+    "responsive horizontal padding"
+  ],
+  "constraints": [
+    "Use for new React-authored sections when the normal portfolio content width fits.",
+    "Do not retrofit legacy injected HTML solely to satisfy this component."
+  ],
+  "verification": [
+    "Verify desktop/tablet/mobile padding.",
+    "Verify no document overflow.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "accessibility": [
+    "Preserve meaningful heading order, accessible link labels, and visible keyboard focus where interactive."
+  ],
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "semantics": [
+    "A new React-authored section needs the standard portfolio content width"
+  ],
+  "use_when": [
+    "A new React-authored section needs the standard portfolio content width"
+  ],
+  "do_not_use_when": [
+    "Retrofitting it would alter legacy injected HTML layout"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "children": {
+        "required": true,
+        "type": "ReactNode"
+      },
+      "className": {
+        "required": false,
+        "type": "string"
+      }
+    }
+  },
+  "catalog_status": "source-snapshot-in-catalog",
+  "storybook_story_ids": [
+    "05-body-sections-container--example"
+  ],
+  "agent_readiness": {
+    "phase": "documented-and-discoverable",
+    "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+    "independent_agent_test": "not_run",
+    "independent_consumer_test": "not_run"
+  }
+}

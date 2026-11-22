@@ -1,0 +1,105 @@
+{
+  "id": "responsive-table",
+  "component": "ResponsiveTable",
+  "maturity": "candidate",
+  "scope": "page-family",
+  "source_of_truth": "src/ResponsiveTable.tsx",
+  "required_inputs": [
+    "columns",
+    "rows",
+    "ariaLabel"
+  ],
+  "row_contract": {
+    "required": [
+      "key",
+      "cells"
+    ]
+  },
+  "states": [
+    "default",
+    "collapsed-rows",
+    "expanded-rows"
+  ],
+  "semantics": [
+    "Use only for genuinely tabular row-column relationships.",
+    "Column headers use th scope=col.",
+    "When firstColumnIsRowHeader is true, first cells use th scope=row."
+  ],
+  "accessibility": [
+    "Scrollable wrapper is a labelled region and keyboard-focusable.",
+    "Expandable rows control exposes aria-expanded.",
+    "Provide a specific ariaLabel describing the table."
+  ],
+  "constraints": [
+    "Row cell counts must match the number of columns.",
+    "Do not use table markup solely for visual alignment.",
+    "Horizontal overflow may occur inside the table region, but must not create document-level overflow."
+  ],
+  "verification": [
+    "Verify every row has the same cell count as columns.",
+    "Verify table region can receive focus.",
+    "Verify show more/show less when initialVisibleRows is used.",
+    "Verify no document-level horizontal overflow at 390px.",
+    "Verify row headers when configured.",
+    "Run TypeScript and design-system registry validation."
+  ],
+  "usage_class": "reuse",
+  "responsive": [
+    "Check 1440px, 768px, and 390px; no document overflow. Consumer-specific layout remains local."
+  ],
+  "use_when": [
+    "Structured comparative data is genuinely tabular",
+    "The table may need horizontal overflow on narrow viewports",
+    "Rows may optionally be progressively disclosed"
+  ],
+  "do_not_use_when": [
+    "The information is better represented as cards or prose",
+    "Cells need complex application interactions",
+    "The visual layout only resembles a table but has no row-column semantics"
+  ],
+  "api": {
+    "kind": "react",
+    "props": {
+      "id": {
+        "required": false,
+        "type": "string"
+      },
+      "columns": {
+        "required": true,
+        "type": "ResponsiveTableColumn[]"
+      },
+      "rows": {
+        "required": true,
+        "type": "ResponsiveTableRow[]"
+      },
+      "ariaLabel": {
+        "required": true,
+        "type": "string"
+      },
+      "initialVisibleRows": {
+        "required": false,
+        "type": "number"
+      },
+      "minWidth": {
+        "required": false,
+        "type": "number"
+      },
+      "className": {
+        "required": false,
+        "type": "string"
+      },
+      "showMoreLabel": {
+        "required": false,
+        "type": "string"
+      },
+      "firstColumnIsRowHeader": {
+        "required": false,
+        "type": "boolean"
+      }
+    }
+  },
+  "consumption": {
+    "package": "@krpadesigns/portfolio-design-system",
+    "styles": "@krpadesigns/portfolio-design-system/styles.css"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@krpadesigns/portfolio-design-system",
+  "version": "0.2.0-rc.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "files": [
+    "dist",
+    "styles.css",
+    "tokens",
+    "contracts"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./styles.css",
+    "./tokens": "./tokens/foundations.json",
+    "./contracts/*.json": "./contracts/*.json"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "storybook": "npm run build && storybook dev",
+    "build-storybook": "npm run build && storybook build",
+    "catalog:validate": "node scripts/validate-catalog.mjs",
+    "agent:policy-test": "node scripts/check-agent-policy.mjs",
+    "package:smoke": "node scripts/test-packaged-consumer.mjs"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "10.6.6",
+    "@storybook/react-vite": "10.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "storybook": "10.6.6",
+    "typescript": "5.9.3",
+    "vite": "7.3.8"
+  }
+}

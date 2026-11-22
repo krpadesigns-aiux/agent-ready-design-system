@@ -1,0 +1,24 @@
+:root {
+  --font-outfit: Outfit, system-ui;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans", system-ui;
+  --section-gap: var(--pds-space-section, 3rem);
+}
+.catalog-usage {
+  background: #f7f5f2;
+  color: #171817;
+  border: 1px solid #ded9cf;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  font: 14px/1.5 system-ui, sans-serif;
+}
+.catalog-usage strong { margin-right: 8px; }
+.catalog-layout-demo { box-sizing: border-box; }
+.catalog-layout-demo > div {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--pds-layout-wide);
+  margin-inline: auto;
+  padding-inline: var(--pds-layout-gutter);
+}
+.catalog-sample { border: 1px dashed #777; padding: 16px; }

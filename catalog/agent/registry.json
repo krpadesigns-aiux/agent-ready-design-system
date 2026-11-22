@@ -1,0 +1,997 @@
+{
+  "schema_version": "1.1",
+  "system": "Agent-Ready Portfolio Design System — isolated Storybook candidate",
+  "policy": {
+    "default_maturity": "candidate",
+    "allowed_maturity": [
+      "candidate",
+      "keep",
+      "deprecated"
+    ],
+    "agent_may_promote_maturity": false,
+    "prefer_existing_component": true,
+    "require_contract_before_use": true,
+    "require_verification_evidence": true,
+    "allowed_usage_class": [
+      "reuse",
+      "extend",
+      "local",
+      "deprecated"
+    ],
+    "default_usage_class": "local",
+    "new_shared_component_requires": "two consumers or a documented platform-level semantic reason"
+  },
+  "components": [
+    {
+      "id": "key-decisions-accordion",
+      "name": "KeyDecisionsAccordion",
+      "path": "src/KeyDecisionsAccordion.tsx",
+      "contract": "catalog/agent/contracts/key-decisions-accordion.json",
+      "maturity": "candidate",
+      "scope": "page-family",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A case study presents consequential product decisions or trade-offs",
+        "Progressive disclosure improves scanability",
+        "The content has a stable title plus expandable evidence"
+      ],
+      "do_not_use_when": [
+        "The content is simple static prose",
+        "Nested scrolling or iframe content is required",
+        "The interaction is not semantically a disclosure"
+      ],
+      "usage_class": "reuse",
+      "original_portfolio_path": "src/components/case-study/KeyDecisionsAccordion.tsx",
+      "catalog_status": "packaged-react-v0.1.0",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-key-decisions-accordion--collapsed",
+        "06-interactive-storytelling-key-decisions-accordion--expanded"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "REUSE_WITH_VERIFICATION",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+      }
+    },
+    {
+      "id": "runtime-architecture",
+      "name": "ExpandableArchitecture",
+      "path": "catalog/source/ExpandableArchitecture.tsx",
+      "contract": "catalog/agent/contracts/runtime-architecture.json",
+      "maturity": "candidate",
+      "scope": "page-family",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A case study needs a compact system or runtime architecture with comparable nodes",
+        "Additional implementation details should be progressively disclosed"
+      ],
+      "do_not_use_when": [
+        "The content requires arbitrary graph topology or edge relationships",
+        "The diagram would need freeform canvas positioning",
+        "The content is only a decorative process illustration"
+      ],
+      "usage_class": "reuse",
+      "original_portfolio_path": "src/components/case-study/ExpandableArchitecture.tsx",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "04-metrics-and-evidence-architecture-diagram--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-story-nav",
+      "name": "CaseStudyStoryNav",
+      "path": "catalog/source/CaseStudyStoryNav.tsx",
+      "contract": "catalog/agent/contracts/case-study-story-nav.json",
+      "maturity": "candidate",
+      "scope": "page-family",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A long-form case study has stable chapter anchors",
+        "The page needs active-section tracking and sticky chapter navigation"
+      ],
+      "do_not_use_when": [
+        "The page is not a long-form case study",
+        "Sections do not have stable unique IDs",
+        "The requested navigation is global site navigation"
+      ],
+      "usage_class": "reuse",
+      "original_portfolio_path": "src/components/case-study/CaseStudyStoryNav.tsx",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "02-navigation-right-edge-story-navigation--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "responsive-table",
+      "name": "ResponsiveTable",
+      "path": "src/ResponsiveTable.tsx",
+      "contract": "catalog/agent/contracts/responsive-table.json",
+      "maturity": "candidate",
+      "scope": "page-family",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "Structured comparative data is genuinely tabular",
+        "The table may need horizontal overflow on narrow viewports",
+        "Rows may optionally be progressively disclosed"
+      ],
+      "do_not_use_when": [
+        "The information is better represented as cards or prose",
+        "Cells need complex application interactions",
+        "The visual layout only resembles a table but has no row-column semantics"
+      ],
+      "usage_class": "reuse",
+      "original_portfolio_path": "src/components/case-study/ResponsiveTable.tsx",
+      "catalog_status": "packaged-react-v0.1.0",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "04-metrics-and-evidence-responsive-table--default",
+        "04-metrics-and-evidence-responsive-table--progressive-disclosure",
+        "04-metrics-and-evidence-responsive-table--narrow-container"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "REUSE_WITH_VERIFICATION",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+      }
+    },
+    {
+      "id": "portfolio-navigation",
+      "name": "Navigation",
+      "path": "catalog/source/Navigation.tsx",
+      "contract": "catalog/agent/contracts/navigation.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "site",
+      "consumers": [
+        "homepage",
+        "about",
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A portfolio page needs the global header/navigation"
+      ],
+      "do_not_use_when": [
+        "The surface is not part of the portfolio site"
+      ],
+      "original_portfolio_path": "src/components/portfolio/Navigation.tsx",
+      "catalog_status": "public-safe-adaptation",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "02-navigation-global-navigation--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "page-container",
+      "name": "Container",
+      "path": "catalog/source/Container.tsx",
+      "contract": "catalog/agent/contracts/container.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "site",
+      "consumers": [
+        "new-react-sections"
+      ],
+      "use_when": [
+        "A new React-authored section needs the standard portfolio content width"
+      ],
+      "do_not_use_when": [
+        "Retrofitting it would alter legacy injected HTML layout"
+      ],
+      "original_portfolio_path": "src/components/layout/Container.tsx",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-container--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "page-section",
+      "name": "Section",
+      "path": "catalog/source/Section.tsx",
+      "contract": "catalog/agent/contracts/section.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "site",
+      "consumers": [
+        "new-react-sections"
+      ],
+      "use_when": [
+        "A new section follows normal portfolio vertical rhythm"
+      ],
+      "do_not_use_when": [
+        "A legacy or full-bleed structure requires different semantics"
+      ],
+      "original_portfolio_path": "src/components/layout/Section.tsx",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-section--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-chapter-label",
+      "name": "CaseStudyChapterLabel",
+      "path": "catalog/source-styles/case-study-chapter-label.css",
+      "contract": "catalog/agent/contracts/chapter-label.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "page-family",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A case-study chapter needs its numbered eyebrow/label"
+      ],
+      "do_not_use_when": [
+        "The text is not a chapter label"
+      ],
+      "original_portfolio_path": "src/styles/case-study-chapter-label.css",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-chapter-label--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-chapter-title",
+      "name": "CaseStudyChapterTitle",
+      "path": "catalog/source-styles/case-study-chapter-title.css",
+      "contract": "catalog/agent/contracts/chapter-title.json",
+      "maturity": "candidate",
+      "usage_class": "reuse",
+      "scope": "page-family",
+      "consumers": [
+        "slingshot",
+        "chester"
+      ],
+      "use_when": [
+        "A case-study chapter needs the established title hierarchy"
+      ],
+      "do_not_use_when": [
+        "The text is not a chapter-level h2; use local narrative hierarchy."
+      ],
+      "original_portfolio_path": "src/styles/case-study-chapter-title.css",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-chapter-title--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "dark-contribution-panel",
+      "name": "DarkContributionPanel",
+      "path": "catalog/source-styles/case-study-dark-contribution.css",
+      "contract": "catalog/agent/contracts/dark-contribution.json",
+      "maturity": "candidate",
+      "usage_class": "reuse",
+      "scope": "page-family",
+      "consumers": [
+        "slingshot"
+      ],
+      "use_when": [
+        "A case study needs a dark personal-contribution or delivered-work surface"
+      ],
+      "do_not_use_when": [
+        "Ordinary narrative prose or a purely decorative dark card."
+      ],
+      "platform_reason": "Semantic contribution/delivered-work surface; CSS opt-in API avoids requiring a Slingshot root. One current project; no adoption claim.",
+      "original_portfolio_path": "src/styles/case-study-dark-contribution.css",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-editorial-compositions--dark-contribution",
+        "05-body-sections-dark-contribution-panel--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "portfolio-contact",
+      "name": "HomeV2Contact",
+      "path": "catalog/source/HomeV2Contact.tsx",
+      "contract": "catalog/agent/contracts/home-contact.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "site",
+      "consumers": [
+        "homepage",
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A portfolio page needs the canonical closing contact/footer surface"
+      ],
+      "do_not_use_when": [
+        "A documented product/legal page requires a different footer"
+      ],
+      "original_portfolio_path": "src/components/home-v2/HomeV2Contact.tsx",
+      "catalog_status": "public-safe-adaptation",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "08-footer-portfolio-contact--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "back-to-top",
+      "name": "BackToTop",
+      "path": "catalog/source/BackToTop.tsx",
+      "contract": "catalog/agent/contracts/back-to-top.json",
+      "maturity": "keep",
+      "usage_class": "reuse",
+      "scope": "site",
+      "consumers": [
+        "buyers-agent",
+        "slingshot"
+      ],
+      "use_when": [
+        "A long portfolio page benefits from the standard back-to-top control"
+      ],
+      "do_not_use_when": [
+        "The page is short enough that the control adds no value"
+      ],
+      "original_portfolio_path": "src/components/portfolio/BackToTop.tsx",
+      "catalog_status": "source-snapshot-in-catalog",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "02-navigation-back-to-top--example"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "foundation-tokens",
+      "name": "FoundationTokens",
+      "path": "tokens/foundations.json",
+      "contract": "catalog/agent/contracts/foundation-tokens.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Foundations provide semantic values across case studies"
+      ],
+      "do_not_use_when": [
+        "Individual styles or arbitrary hardcoded values do not define shared semantics"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "foundation",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "01-foundations-tokens--colors",
+        "01-foundations-tokens--typography",
+        "01-foundations-tokens--spacing",
+        "01-foundations-tokens--layout-and-breakpoints",
+        "01-foundations-tokens--radius-and-elevation"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "homepage-hero",
+      "name": "HeroComposition",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/homepage-hero.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A landing hero needs positioning, proof and actions"
+      ],
+      "do_not_use_when": [
+        "A short content section does not need an entire hero"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "03-hero-and-cta-portfolio-hero--homepage-hero"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "hero-action-deck",
+      "name": "HeroActionDeck",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/hero-action-deck.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A hero needs three complementary entry actions"
+      ],
+      "do_not_use_when": [
+        "One ordinary text link needs no three-card deck"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "03-hero-and-cta-portfolio-hero--three-interactive-hero-cards",
+        "03-hero-and-cta-portfolio-hero--assistant-card",
+        "03-hero-and-cta-portfolio-hero--research-design-build-card",
+        "03-hero-and-cta-portfolio-hero--about-me-showreel-card"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-hero",
+      "name": "CaseStudyHero",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/case-study-hero.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A case study needs its context and framing at the top"
+      ],
+      "do_not_use_when": [
+        "A generic header or page title is sufficient"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "03-hero-and-cta-portfolio-hero--case-study-hero"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "cta-variants",
+      "name": "CtaVariants",
+      "path": "stories/HeroAndCTA.stories.tsx",
+      "contract": "catalog/agent/contracts/cta-variants.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "An editorial surface needs distinct primary and supporting links"
+      ],
+      "do_not_use_when": [
+        "The action is destructive or transactional"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "03-hero-and-cta-portfolio-hero--cta-states"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "proof-strip",
+      "name": "ProofStrip",
+      "path": "src/ProofStrip.tsx",
+      "contract": "catalog/agent/contracts/proof-strip.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A group of concise proof points supports the hero"
+      ],
+      "do_not_use_when": [
+        "Metrics are unsupported, incomparable or misleading"
+      ],
+      "usage_class": "reuse",
+      "catalog_status": "packaged-react-0.2.0-rc.0",
+      "implementation_kind": "react-component",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "04-metrics-and-evidence-proof-and-impact--three-homepage-proof-cards",
+        "04-metrics-and-evidence-proof-and-impact--single-metric-variant"
+      ],
+      "agent_readiness": {
+        "phase": "packaged-rc-pending-independent-evaluation",
+        "allowed_action": "REUSE_WITH_VERIFICATION",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+      },
+      "original_portfolio_path": "src/components/home-v2/ProofStrip.tsx"
+    },
+    {
+      "id": "impact-metrics",
+      "name": "ImpactMetrics",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/impact-metrics.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Impact evidence has a grounded measurable value"
+      ],
+      "do_not_use_when": [
+        "The metric is not substantiated"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "04-metrics-and-evidence-proof-and-impact--before-after-impact"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "editorial-section",
+      "name": "EditorialSection",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/editorial-section.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Narrative sections need text/media alignment and spacing"
+      ],
+      "do_not_use_when": [
+        "The section must contain specialized app UI"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-editorial-compositions--text-only",
+        "05-body-sections-editorial-compositions--text-left-media-right",
+        "05-body-sections-editorial-compositions--media-left-text-right"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "before-after-comparison",
+      "name": "BeforeAfterComparison",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/before-after-comparison.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A clear before and after outcome is supported by evidence"
+      ],
+      "do_not_use_when": [
+        "There is no verified baseline"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-editorial-compositions--before-and-after"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "evidence-artifacts",
+      "name": "EvidenceArtifacts",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/evidence-artifacts.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Research findings need displayed source artifacts"
+      ],
+      "do_not_use_when": [
+        "Assets are private or unlicensed"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "composition",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "05-body-sections-editorial-compositions--evidence-artifacts"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-lightbox",
+      "name": "CaseStudyImageLightbox",
+      "path": "src/CaseStudyImageLightbox.tsx",
+      "contract": "catalog/agent/contracts/case-study-lightbox.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Artifact images need focusable zoom and gallery navigation"
+      ],
+      "do_not_use_when": [
+        "Simple inline images need no modal viewer"
+      ],
+      "usage_class": "reuse",
+      "catalog_status": "packaged-react-0.2.0-rc.0",
+      "implementation_kind": "react-component",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-patterns--case-study-lightbox"
+      ],
+      "agent_readiness": {
+        "phase": "packaged-rc-pending-independent-evaluation",
+        "allowed_action": "REUSE_WITH_VERIFICATION",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+      },
+      "original_portfolio_path": "src/components/case-study/CaseStudyImageLightbox.tsx"
+    },
+    {
+      "id": "product-evolution",
+      "name": "EvolutionRail",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/product-evolution.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A case study explains sequential design iterations with proof"
+      ],
+      "do_not_use_when": [
+        "A linear paragraph sufficiently conveys changes"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-patterns--product-evolution-v-1-to-v-5"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "synchronized-image-tabs",
+      "name": "ImageTabs",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/synchronized-image-tabs.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Selecting an approach updates corresponding visual evidence"
+      ],
+      "do_not_use_when": [
+        "Static comparison can convey choices accessibly"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-patterns--left-tabs-right-media"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "scroll-synchronized-story",
+      "name": "ScrollStory",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/scroll-synchronized-story.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Narrative and visuals change with scroll position"
+      ],
+      "do_not_use_when": [
+        "Motion hurts reading or reduced-motion requirements cannot be met"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-patterns--scroll-synchronized-narrative"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "project-card-variants",
+      "name": "ProjectCard",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/project-card-variants.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Featured and supporting work need consistent content anatomy"
+      ],
+      "do_not_use_when": [
+        "Each project requires completely different semantics"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "04-metrics-and-evidence-proof-and-impact--evidence-led-project",
+        "07-project-cards-variants--featured",
+        "07-project-cards-variants--standard",
+        "07-project-cards-variants--compact",
+        "07-project-cards-variants--image-led",
+        "07-project-cards-variants--video-led",
+        "07-project-cards-variants--metrics-and-evidence"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "case-study-format-switch",
+      "name": "FormatSwitch",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/case-study-format-switch.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A case study offers narrative and slide formats"
+      ],
+      "do_not_use_when": [
+        "Only one mode exists"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "02-navigation-additional-patterns--case-study-format-switch"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "project-filter-tabs",
+      "name": "ProjectFilterTabs",
+      "path": "stories/NavigationSupplement.stories.tsx",
+      "contract": "catalog/agent/contracts/project-filter-tabs.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "Many projects benefit from selective browsing"
+      ],
+      "do_not_use_when": [
+        "Only a few projects exist"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "02-navigation-additional-patterns--project-category-filter"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "footer-navigation",
+      "name": "CatalogFooter",
+      "path": "catalog/Showcase.tsx",
+      "contract": "catalog/agent/contracts/footer-navigation.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A page needs contact and closing links"
+      ],
+      "do_not_use_when": [
+        "Project-specific legal footer cannot use this template"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "08-footer-contact-and-navigation--contact-footer"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    },
+    {
+      "id": "image-carousel",
+      "name": "ImageCarousel",
+      "path": "stories/Interactions.stories.tsx",
+      "contract": "catalog/agent/contracts/image-carousel.json",
+      "maturity": "candidate",
+      "scope": "portfolio-catalog",
+      "consumers": [],
+      "use_when": [
+        "A set of evidence images warrants user-controlled sequential navigation"
+      ],
+      "do_not_use_when": [
+        "The gallery should be shown as an accessible grid rather than hiding context"
+      ],
+      "usage_class": "local",
+      "catalog_status": "reference-demo-not-packaged",
+      "implementation_kind": "react-demo",
+      "storybook_available": true,
+      "storybook_story_ids": [
+        "06-interactive-storytelling-patterns--image-carousel"
+      ],
+      "agent_readiness": {
+        "phase": "documented-and-discoverable",
+        "allowed_action": "LOCAL_EXAMPLE_ONLY",
+        "independent_agent_test": "not_run",
+        "independent_consumer_test": "not_run"
+      }
+    }
+  ],
+  "composition_contract": "catalog/agent/contracts/portfolio-page-composition.json",
+  "inventory": "design-system/agent/COMPONENT_INVENTORY.md",
+  "deprecated": [
+    {
+      "path": "src/components/portfolio/Contact.tsx",
+      "replacement": "src/components/home-v2/HomeV2Contact.tsx",
+      "reason": "Legacy closing-contact implementation"
+    },
+    {
+      "path": "src/components/portfolio/MobileNavigation.tsx",
+      "replacement": "src/components/portfolio/Navigation.tsx",
+      "reason": "Responsive behavior belongs to the canonical Navigation"
+    },
+    {
+      "path": "src/components/home-v2-morning/",
+      "replacement": "src/components/home-v2/",
+      "reason": "Prior homepage experiment; not a source for new pages"
+    }
+  ],
+  "system_version": "0.1.0-catalog-candidate",
+  "foundations": "tokens/foundations.json",
+  "release_status": "local-review-not-published",
+  "scope_notes": "Two packaged components remain v0.1.0. All new catalog demo patterns are LOCAL until reviewed for portable reuse.",
+  "catalog_counts": {
+    "original_registered_entries": 12,
+    "new_candidate_entries": 19,
+    "total_discoverable_entries": 31
+  },
+  "storybook_story_count": 51,
+  "agent_readiness_scope": "Four package exports in local 0.2.0-rc.0 candidate (two inherited from v0.1.0), remaining entries are source snapshots/adaptations/demos. Independent autonomous agent evaluation not run."
+}

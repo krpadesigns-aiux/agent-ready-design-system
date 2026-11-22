@@ -1,0 +1,11 @@
+import React from "react";
+import type {Meta,StoryObj} from "@storybook/react-vite";
+import {ProjectCard} from "../catalog/Showcase";
+const meta={title:"07 Project Cards/Variants",parameters:{catalogStatus:"Portfolio-derived React examples; not packaged",sourceFile:"src/components/home-v2/FeaturedProjectCard.tsx; src/components/portfolio/ProjectCard.tsx"}} satisfies Meta;
+export default meta;type Story=StoryObj<typeof meta>;
+export const Featured:Story={render:()=><ProjectCard variant="featured"/>};
+export const Standard:Story={render:()=><ProjectCard variant="standard"/>};
+export const Compact:Story={render:()=><ProjectCard variant="compact"/>};
+export const ImageLed:Story={render:()=><ProjectCard variant="image"/>};
+export const VideoLed:Story={render:()=><ProjectCard variant="video"/>};
+export const MetricsAndEvidence:Story={render:()=><ProjectCard variant="metrics"/>};
