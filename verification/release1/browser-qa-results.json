@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-23T01:26:03.367Z",
+  "target": "http://127.0.0.1:6023/",
+  "browser": "Chrome 158 headless CDP",
+  "scope": "Representative component tests, not exhaustive accessibility certification",
+  "checks": [
+    {
+      "name": "lightbox image triggers",
+      "pass": true,
+      "detail": {
+        "count": 3
+      }
+    },
+    {
+      "name": "lightbox modal focus",
+      "pass": true,
+      "detail": {
+        "dialog": true,
+        "focused": "Close enlarged image"
+      }
+    },
+    {
+      "name": "lightbox zoom in updates zoom and accessible name",
+      "pass": true,
+      "detail": {
+        "label": "Reset zoom to 125%",
+        "imageWidth": "125%"
+      }
+    },
+    {
+      "name": "lightbox zoom reset",
+      "pass": true,
+      "detail": {
+        "width": "100%"
+      }
+    },
+    {
+      "name": "lightbox ArrowRight",
+      "pass": true,
+      "detail": {
+        "previous": "Exploration · sample artifact",
+        "next": "Prototype · sample artifact"
+      }
+    },
+    {
+      "name": "lightbox Shift+Tab focus trap",
+      "pass": true,
+      "detail": {
+        "focus": "Close enlarged image"
+      }
+    },
+    {
+      "name": "lightbox axe WCAG AA",
+      "pass": true,
+      "detail": {
+        "passes": 21,
+        "incomplete": 3,
+        "violations": []
+      }
+    },
+    {
+      "name": "lightbox Escape and focus restoration",
+      "pass": true,
+      "detail": {
+        "dialog": false,
+        "focused": "Enlarge Example exploration artifact",
+        "overflow": ""
+      }
+    },
+    {
+      "name": "lightbox gallery no global overflow 768",
+      "pass": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "lightbox gallery no global overflow 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "accordion native semantics",
+      "pass": true,
+      "detail": {
+        "details": 1,
+        "open": 0,
+        "summaries": 1
+      }
+    },
+    {
+      "name": "accordion Enter",
+      "pass": true,
+      "detail": {
+        "opens": true
+      }
+    },
+    {
+      "name": "accordion axe WCAG AA",
+      "pass": true,
+      "detail": {
+        "passes": 20,
+        "incomplete": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "accordion no global overflow at 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "table semantic markup",
+      "pass": true,
+      "detail": {
+        "tables": 1,
+        "rows": 2
+      }
+    },
+    {
+      "name": "table has local horizontal scroll, no global overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390,
+        "scrollAreas": 1
+      }
+    },
+    {
+      "name": "responsive table axe WCAG AA",
+      "pass": true,
+      "detail": {
+        "passes": 20,
+        "incomplete": 1,
+        "violations": []
+      }
+    },
+    {
+      "name": "responsive table progressive disclosure",
+      "pass": true,
+      "detail": {
+        "beforeExpand": {
+          "rows": 1,
+          "button": "false"
+        },
+        "afterExpand": {
+          "rows": 2,
+          "button": "true"
+        }
+      }
+    },
+    {
+      "name": "reduced-motion preference simulation",
+      "pass": true,
+      "detail": {
+        "reduced": true,
+        "limitations": "This verifies media emulation only, not every animation"
+      }
+    }
+  ],
+  "passed": 19,
+  "failed": 0
+}
