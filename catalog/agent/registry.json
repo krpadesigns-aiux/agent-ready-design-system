@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "system": "Agent-Ready Portfolio Design System — isolated Storybook candidate",
+  "system": "Agent-Ready Portfolio Design System — public Storybook, npm candidate",
   "policy": {
     "default_maturity": "candidate",
     "allowed_maturity": [
@@ -122,8 +122,10 @@
       "agent_readiness": {
         "phase": "documented-and-discoverable",
         "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
-        "independent_agent_test": "not_run",
-        "independent_consumer_test": "not_run"
+        "independent_agent_test": "evaluated-extraction-approval-required",
+        "independent_consumer_test": "not_run",
+        "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+        "observed_limitations": "Correctly identified source-only chapter nav and required human approval before extraction. No unauthorized package import or source copy; no consumer implementation."
       }
     },
     {
@@ -159,8 +161,10 @@
       "agent_readiness": {
         "phase": "documented-and-discoverable",
         "allowed_action": "REUSE_WITH_VERIFICATION",
-        "independent_agent_test": "not_run",
-        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+        "independent_agent_test": "evaluated-technical-pass-claim-failure-remediation-pass",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+        "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+        "observed_limitations": "One initial consumer built but asserted unperformed audits and breakpoint checks; same-task retest with revised agent instructions produced evidence-grounded sample values and passed 5/5 targeted browser checks."
       }
     },
     {
@@ -585,8 +589,10 @@
       "agent_readiness": {
         "phase": "packaged-rc-pending-independent-evaluation",
         "allowed_action": "REUSE_WITH_VERIFICATION",
-        "independent_agent_test": "not_run",
-        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+        "independent_agent_test": "evaluated-integration-pass-consumer-title-failure",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+        "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+        "observed_limitations": "Correct discovery, package import and build. Three sample metric cards were explicitly fictional. Generated app had missing HTML title; consumer browser axe flagged document-title."
       },
       "original_portfolio_path": "src/components/home-v2/ProofStrip.tsx"
     },
@@ -728,8 +734,10 @@
       "agent_readiness": {
         "phase": "packaged-rc-pending-independent-evaluation",
         "allowed_action": "REUSE_WITH_VERIFICATION",
-        "independent_agent_test": "not_run",
-        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+        "independent_agent_test": "evaluated-integration-pass-accessibility-findings",
+        "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+        "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+        "observed_limitations": "Correct discovery, package import and build. Image arrows/Escape/focus return worked. Generated app had no document title and multiple visible-label/accessible-name mismatches, including published package reset zoom control."
       },
       "original_portfolio_path": "src/components/case-study/CaseStudyImageLightbox.tsx"
     },
@@ -847,8 +855,10 @@
       "agent_readiness": {
         "phase": "documented-and-discoverable",
         "allowed_action": "LOCAL_EXAMPLE_ONLY",
-        "independent_agent_test": "not_run",
-        "independent_consumer_test": "not_run"
+        "independent_agent_test": "evaluated-stop-correct",
+        "independent_consumer_test": "not_run",
+        "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+        "observed_limitations": "Correctly STOPPED on unlicensed employer screenshots and unsupported outcome claims. No consumer implementation attempted."
       }
     },
     {
@@ -985,7 +995,7 @@
   ],
   "system_version": "0.1.0-catalog-candidate",
   "foundations": "tokens/foundations.json",
-  "release_status": "local-review-not-published",
+  "release_status": "public-github-and-storybook-live-npm-package-candidate-unpublished",
   "scope_notes": "Two packaged components remain v0.1.0. All new catalog demo patterns are LOCAL until reviewed for portable reuse.",
   "catalog_counts": {
     "original_registered_entries": 12,

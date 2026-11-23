@@ -1,0 +1,22 @@
+{
+  "selected_registry_id": "case-study-story-nav",
+  "storybook_story_ids": [
+    "02-navigation-right-edge-story-navigation--example"
+  ],
+  "decision": "EXTRACT_BEFORE_EXTERNAL_REUSE",
+  "rationale": "The registry entry for 'case-study-story-nav' (CaseStudyStoryNav) is the semantically correct match for a right-edge chapter rail with current-section indicator. Its contract confirms: sticky chapter nav, IntersectionObserver-based active-section tracking, aria-current=location, and scroll-synced pinning — exactly the described requirement. However, its catalog_status is 'source-snapshot-in-catalog' and its agent_readiness.allowed_action is 'EXTRACT_BEFORE_EXTERNAL_REUSE'. AGENTS.md is explicit: 'source-snapshot-in-catalog is not a package export' and 'EXTRACT_BEFORE_EXTERNAL_REUSE — suitable source exists but is not portable; request human approval before changing the shared component/package.' The package (0.2.0-rc.0 tarball) only exports four components: ResponsiveTable, KeyDecisionsAccordion, ProofStrip, CaseStudyImageLightbox. CaseStudyStoryNav is not among them. AGENTS.md also states: 'Never invent a package export.' Therefore, neither a direct tarball import nor a local copy of the source is authorized without explicit human approval. No implementation was performed.",
+  "package_imports": [],
+  "files_changed": [
+    "consumer/EVALUATION_DECISION.json"
+  ],
+  "commands_run": [],
+  "build_result": "NOT_RUN — no implementation was attempted; the allowed_action requires human approval before any extraction or local adaptation. Running a build without an implementation would not produce meaningful evidence.",
+  "testing_limitations": [
+    "No browser or accessibility testing was performed.",
+    "No TypeScript compilation was run (no implementation to compile).",
+    "The contract specifies required verifications (IntersectionObserver active-state, sticky pinning, 390px horizontal scroller, keyboard nav, aria-current, reduced-motion) that remain unverified and cannot be satisfied until a human approves extraction and an implementation is produced.",
+    "independent_agent_test: not_run and independent_consumer_test: not_run per registry — no prior autonomous evaluation evidence exists for this component."
+  ],
+  "human_review_needed": true,
+  "human_review_reason": "CaseStudyStoryNav matches the task semantically but is a source snapshot only, not a packaged export. Extraction into the consumer (or into a new package export) requires explicit human approval per the registry policy (EXTRACT_BEFORE_EXTERNAL_REUSE). Once approved, the agent should: (1) copy the source from catalog/source/CaseStudyStoryNav.tsx into the consumer, (2) resolve any internal design-system dependencies, (3) run TypeScript build, (4) verify all contract checklist items interactively at 1440/768/390px, keyboard, and reduced-motion."
+}

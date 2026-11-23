@@ -1,0 +1,43 @@
+{
+  "selected_registry_id": "responsive-table",
+  "storybook_story_ids": [
+    "04-metrics-and-evidence-responsive-table--default",
+    "04-metrics-and-evidence-responsive-table--progressive-disclosure",
+    "04-metrics-and-evidence-responsive-table--narrow-container"
+  ],
+  "decision": "REUSE_WITH_VERIFICATION",
+  "rationale": "ResponsiveTable is the only packaged design-system export that matches the semantic need: genuinely tabular row-column comparative data (Criterion / Evidence / Status). Its registry entry (responsive-table) has catalog_status 'packaged-react-v0.1.0', allowed_action 'REUSE_WITH_VERIFICATION', and an independent-consumer smoke test recorded 2026-11-22. The component supplies: a labelled scrollable region (role=region, tabIndex=0, aria-label), column th[scope=col] headers, optional first-column th[scope=row] row headers (used here with firstColumnIsRowHeader=true), and horizontal overflow containment. No other packaged export (KeyDecisionsAccordion, ProofStrip, CaseStudyImageLightbox) fits the structured-comparison use case. Entries with catalog_status 'source-snapshot-in-catalog' or 'reference-demo-not-packaged' are not portable package APIs per AGENTS.md and were not used.",
+  "package_imports": [
+    "@krpadesigns/portfolio-design-system",
+    "@krpadesigns/portfolio-design-system/styles.css"
+  ],
+  "files_changed": [
+    "consumer/index.html",
+    "consumer/src/App.tsx",
+    "consumer/vite.config.ts",
+    "consumer/EVALUATION_DECISION.json"
+  ],
+  "commands_run": [
+    "npm install (consumer/)",
+    "npm install ../system/krpadesigns-portfolio-design-system-0.2.0-rc.0.tgz (consumer/)",
+    "npm run build (consumer/) — tsc --noEmit && vite build"
+  ],
+  "build_result": "PASS — TypeScript type-check (tsc --noEmit) succeeded with zero errors; Vite production build succeeded in 578ms. Three 'use client' directive warnings were emitted by Rollup for the design-system bundle; these are benign in a non-RSC Vite context and caused no build failure.",
+  "testing_limitations": [
+    "No browser render verification was performed; build success does not confirm visual or interactive correctness.",
+    "No keyboard navigation test was run (Tab, Shift+Tab, Enter, Space); the contract requires verifying focus on the scrollable region.",
+    "No viewport testing was run at 1440px, 768px, or 390px; horizontal overflow behaviour at narrow widths is unverified.",
+    "No screen-reader or WCAG audit was run; the component's aria-label, th[scope] markup, and tabIndex are present in source but not independently verified.",
+    "No reduced-motion check was performed.",
+    "Row status values are explicitly labelled as sample content ('Example — not evaluated') and do not assert any real audit outcome.",
+    "The document <title> was added to index.html; visible heading and accessible table label are present in source but not confirmed in a rendered browser session.",
+    "The 'use client' directive warnings were reviewed and deemed benign, but were not independently validated against a Next.js or RSC environment."
+  ],
+  "human_review_needed": [
+    "Interactive browser test at 390px, 768px, and 1440px to confirm no document-level horizontal overflow.",
+    "Keyboard accessibility verification: table region receives focus via Tab; scrollable region is navigable.",
+    "Screen reader spot-check: column and row headers are announced correctly; aria-label is read on region entry.",
+    "Confirm sample row status text ('Example — not evaluated') is appropriate for the intended enterprise case study context before publication.",
+    "Review 'use client' Rollup warnings if the consumer is later integrated into an RSC or Next.js environment."
+  ]
+}

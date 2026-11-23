@@ -16,7 +16,7 @@ const expected={
  "public-safe-adaptation":"LOCAL_EXAMPLE_ONLY",
  "reference-demo-not-packaged":"LOCAL_EXAMPLE_ONLY"
 };
-assert.equal(registry.release_status,"local-review-not-published");
+assert.equal(registry.release_status,"public-github-and-storybook-live-npm-package-candidate-unpublished");
 assert.equal(registry.catalog_counts.original_registered_entries,12);
 assert.equal(registry.catalog_counts.new_candidate_entries,19);
 assert.equal(registry.components.length,31);
@@ -36,7 +36,20 @@ for(const entry of registry.components){
  assert.deepEqual(contract.storybook_story_ids,entry.storybook_story_ids,"Story list mismatch "+entry.id);
  assert.deepEqual(contract.agent_readiness,entry.agent_readiness,"Readiness mismatch "+entry.id);
  assert.equal(entry.agent_readiness?.allowed_action,expected[entry.catalog_status],"Unsafe agent decision for "+entry.id);
- assert.equal(entry.agent_readiness?.independent_agent_test,"not_run","Unverified agent success claim for "+entry.id);
+ const evaluatedAgentStatuses={
+  "responsive-table":"evaluated-technical-pass-claim-failure-remediation-pass",
+  "proof-strip":"evaluated-integration-pass-consumer-title-failure",
+  "case-study-lightbox":"evaluated-integration-pass-accessibility-findings",
+  "case-study-story-nav":"evaluated-extraction-approval-required",
+  "project-card-variants":"evaluated-stop-correct"
+ };
+ const expectedTest=evaluatedAgentStatuses[entry.id]??"not_run";
+ assert.equal(entry.agent_readiness?.independent_agent_test,expectedTest,"Incorrect or unsupported independent-agent claim for "+entry.id);
+ if(expectedTest!=="not_run"){
+  assert.equal(entry.agent_readiness?.independent_agent_evidence,"verification/release1/RELEASE1_REVIEW.md","Missing evaluation evidence for "+entry.id);
+  assert.ok(entry.agent_readiness?.observed_limitations,"No limitations on evaluated component "+entry.id);
+  assert.ok(fs.existsSync(path.join(root,entry.agent_readiness.independent_agent_evidence)),"Missing evaluation report for "+entry.id);
+ }
  assert.ok(Array.isArray(entry.use_when)&&entry.use_when.length>0,"Missing use guidance for "+entry.id);
  assert.ok(Array.isArray(entry.do_not_use_when)&&entry.do_not_use_when.length>0,"Missing avoid guidance for "+entry.id);
  assert.ok(Array.isArray(contract.verification)&&contract.verification.length>0,"Missing verification checks for "+entry.id);
@@ -74,5 +87,5 @@ for(const name of ["01 Foundations","02 Navigation","03 Hero and CTA","04 Metric
 }
 console.log("PASS: "+ids.size+" catalog entries, "+mappedStories+" mapped stories across "+cats.size+" categories");
 console.log("PASS: every entry has a matching machine-readable contract, usage policy, source and Storybook example");
-console.log("PASS: unreviewed examples cannot be mislabelled as REUSE; all autonomous agent tests marked not_run");
+console.log("PASS: agent evaluation statuses are evidence-linked for 5 assessed entries; 26 remain not_run");
 console.log("PASS: Storybook source does not import private portfolio paths");

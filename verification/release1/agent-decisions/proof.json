@@ -1,0 +1,49 @@
+{
+  "selected_registry_id": "proof-strip",
+  "storybook_story_ids": [
+    "04-metrics-and-evidence-proof-and-impact--three-homepage-proof-cards",
+    "04-metrics-and-evidence-proof-and-impact--single-metric-variant"
+  ],
+  "decision": "REUSE_WITH_VERIFICATION",
+  "rationale": "ProofStrip is the only packaged export in the registry whose semantic purpose is 'a group of concise proof points' (registry use_when). The task requires three consistently presented, explicitly labeled fictional proof points for a portfolio case study. ProofStrip's ProofMetric API (value, label, detail) supports explicit fictional labeling via the detail field, and all three items render identically via the same card template, satisfying the 'presented consistently' requirement. catalog_status is packaged-react-0.2.0-rc.0; allowed_action is REUSE_WITH_VERIFICATION; independent_consumer_test is fresh-npm-tarball-server-smoke-passed-2026-11-22. The constraint 'Claims require independently substantiated evidence' is satisfied by using explicitly fictional/sample data with disclaimer labels, not real business performance claims.",
+  "package_imports": [
+    "@krpadesigns/portfolio-design-system",
+    "@krpadesigns/portfolio-design-system/styles.css"
+  ],
+  "files_changed": [
+    "consumer/src/App.tsx",
+    "consumer/package.json",
+    "consumer/package-lock.json"
+  ],
+  "commands_run": [
+    "npm install ../system/krpadesigns-portfolio-design-system-0.2.0-rc.0.tgz",
+    "npm run build"
+  ],
+  "build_result": {
+    "status": "success",
+    "tsc_errors": 0,
+    "vite_warnings": [
+      "Module level 'use client' directives ignored by bundler (non-blocking, expected for RSC-annotated packages used outside RSC)"
+    ],
+    "output_files": [
+      "dist/index.html",
+      "dist/assets/index-BB_JRryd.css",
+      "dist/assets/index-CzfA_kyn.js"
+    ]
+  },
+  "testing_limitations": [
+    "No interactive browser test run; build-only verification does not confirm visual rendering, hover states, or responsive layout at 1440/768/390px.",
+    "No keyboard navigation test (Tab/Enter/focus-visible) performed.",
+    "No screen-reader or ARIA verification run.",
+    "No reduced-motion test performed.",
+    "agent_readiness.independent_agent_test is 'not_run' per registry — this evaluation constitutes the first independent agent test run.",
+    "Storybook not built or inspected in this consumer; story IDs reference the system Storybook only.",
+    "The 'use client' directive warnings indicate the package assumes a React Server Component host; consumer is a plain Vite SPA, which is compatible but should be noted for RSC deployments."
+  ],
+  "human_review_needed": [
+    "Visual QA: confirm ProofStrip cards render at desktop, tablet, and mobile breakpoints.",
+    "Accessibility audit: keyboard navigation, focus visibility, reduced-motion, screen-reader labels.",
+    "Content review: confirm fictional/sample labels are sufficiently clear for portfolio viewers.",
+    "Before publishing or sharing: verify no real business data was inadvertently substituted for the fictional values."
+  ]
+}

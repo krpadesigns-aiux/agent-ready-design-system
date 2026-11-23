@@ -1,7 +1,7 @@
 # Independent Agent-Readiness Evaluation Protocol
 
 Date: 2026-11-22
-Current state: **Proposed protocol — NOT RUN with an independent agent.**
+Current state: **Protocol exercised in five independent Claude Code scenarios plus one corrective retest on 2026-11-22.** See [`release1/RELEASE1_REVIEW.md`](./release1/RELEASE1_REVIEW.md). This is a narrow first evaluation, not full autonomous-agent certification.
 
 ## Objective
 
@@ -51,4 +51,4 @@ Keep each candidate marked LOCAL until it has a stable contract, public-safe imp
 
 ## Public release gate
 
-Do not claim full autonomous agent readiness from this test protocol. Publish only after an actual independent evaluation is completed, evidence recorded, rights/license reviewed and explicit user approval granted.
+Do not claim full autonomous agent readiness from the protocol or six selected sessions. The first evaluations found one unsupported-claims failure and browser accessibility defects, followed by one improved table retest. Publication of corrected evidence remains subject to human review and explicit user authorization.

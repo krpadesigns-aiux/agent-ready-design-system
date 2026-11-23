@@ -81,7 +81,7 @@ export function CaseStudyImageLightbox({ images, activeIndex, onSelect, onClose 
             <button type="button" onClick={() => onSelect((activeIndex + 1) % images.length)} disabled={images.length < 2} aria-label="Next image" title="Next image (→)">→</button>
             <span className="csImageLightboxDivider" aria-hidden="true" />
             <button type="button" onClick={() => setZoom(value => Math.max(1, Number((value - 0.25).toFixed(2))))} disabled={zoom <= 1} aria-label="Zoom out" title="Zoom out">−</button>
-            <button type="button" onClick={() => setZoom(1)} aria-label="Reset zoom" title="Reset zoom">{Math.round(zoom * 100)}%</button>
+            <button type="button" onClick={() => setZoom(1)} aria-label={`Reset zoom to ${Math.round(zoom * 100)}%`} title="Reset zoom">{Math.round(zoom * 100)}%</button>
             <button type="button" onClick={() => setZoom(value => Math.min(3, Number((value + 0.25).toFixed(2))))} disabled={zoom >= 3} aria-label="Zoom in" title="Zoom in">+</button>
             <button type="button" className="csImageLightboxClose" ref={closeRef} onClick={onClose} aria-label="Close enlarged image" title="Close (Esc)">×</button>
           </div>

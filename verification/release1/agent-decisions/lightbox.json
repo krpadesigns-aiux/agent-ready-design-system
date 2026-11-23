@@ -1,0 +1,44 @@
+{
+  "selected_registry_id": "case-study-lightbox",
+  "storybook_story_ids": [
+    "06-interactive-storytelling-patterns--case-study-lightbox"
+  ],
+  "decision": "REUSE_WITH_VERIFICATION",
+  "rationale": "Registry entry 'case-study-lightbox' has allowed_action REUSE_WITH_VERIFICATION, catalog_status packaged-react-0.2.0-rc.0, and CaseStudyImageLightbox is a confirmed export in src/index.ts. The component API (images, activeIndex, onSelect, onClose) exactly covers the requirements: keyboard arrow navigation (ArrowLeft/ArrowRight in source keydown handler), Escape to close (Escape key handler), modal focus trap, and focus-return-to-opener on close (useEffect capturing opener before open and calling focus() on cleanup). Three public-domain placeholder images from picsum.photos are used — no unlicensed or private assets. The local npm tarball (krpadesigns-portfolio-design-system-0.2.0-rc.0.tgz) was installed directly into the consumer as authorized.",
+  "package_imports": [
+    "@krpadesigns/portfolio-design-system",
+    "@krpadesigns/portfolio-design-system/styles.css"
+  ],
+  "files_changed": [
+    "consumer/src/App.tsx",
+    "consumer/package.json",
+    "consumer/package-lock.json",
+    "consumer/EVALUATION_DECISION.json"
+  ],
+  "commands_run": [
+    "npm install ../system/krpadesigns-portfolio-design-system-0.2.0-rc.0.tgz",
+    "npm run build"
+  ],
+  "build_result": {
+    "status": "PASS",
+    "typescript_errors": 0,
+    "warnings": [
+      "'use client' directives in package dist files ignored by Vite bundler — expected; not an error"
+    ],
+    "output": "dist/assets/index-C4R88124.js (227.34 kB), dist/assets/index-BB_JRryd.css (7.46 kB)"
+  },
+  "testing_limitations": [
+    "No interactive browser test run — keyboard navigation (ArrowLeft, ArrowRight, Escape), focus-trap, focus-return, zoom controls, and reduced-motion behavior were not independently verified in a live browser.",
+    "Storybook story 06-interactive-storytelling-patterns--case-study-lightbox was not rendered during this evaluation.",
+    "picsum.photos URLs require a live network connection; placeholder images were not fetched or verified offline.",
+    "Mobile viewport overflow and responsive layout were not tested at 390px or 768px.",
+    "Screen-reader / ARIA dialog announcement not independently audited."
+  ],
+  "human_review_needed": [
+    "Interactive browser keyboard test: Tab/Shift+Tab focus trap, ArrowLeft/ArrowRight gallery navigation, Escape close, focus-return-to-trigger.",
+    "Verify zoom controls do not overflow viewport on small screens.",
+    "Confirm picsum.photos images are acceptable as case-study placeholders in this context.",
+    "Accessibility audit: role=dialog, aria-modal, aria-label, reduced-motion preference.",
+    "Confirm CaseStudyImageLightbox opener focus-capture behavior works correctly when triggered from a button (useEffect captures document.activeElement at open time — verify timing is correct in React 19)."
+  ]
+}

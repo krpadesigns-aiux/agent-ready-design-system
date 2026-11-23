@@ -61,8 +61,10 @@
   "agent_readiness": {
     "phase": "packaged-rc-pending-independent-evaluation",
     "allowed_action": "REUSE_WITH_VERIFICATION",
-    "independent_agent_test": "not_run",
-    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+    "independent_agent_test": "evaluated-integration-pass-accessibility-findings",
+    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+    "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+    "observed_limitations": "Correct discovery, package import and build. Image arrows/Escape/focus return worked. Generated app had no document title and multiple visible-label/accessible-name mismatches, including published package reset zoom control."
   },
   "consumption": {
     "package": "@krpadesigns/portfolio-design-system",

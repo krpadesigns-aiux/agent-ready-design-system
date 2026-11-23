@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-11-23T01:41:32.609Z",
+  "source": "independently agent-created React 19 consumers, built and independently checked by evaluator",
+  "browser": "Chrome 158 CDP with axe-core",
+  "total": 13,
+  "passed": 9,
+  "failed": 4,
+  "results": [
+    {
+      "case": "table",
+      "name": "semantic table, three rows, labelled region",
+      "pass": true,
+      "evidence": {
+        "rows": 3,
+        "headers": 3,
+        "scrollable": true
+      }
+    },
+    {
+      "case": "table",
+      "name": "390px responsive local overflow",
+      "pass": true,
+      "evidence": {
+        "viewport": 390,
+        "document": 390,
+        "region": [
+          {
+            "scrollWidth": 720,
+            "clientWidth": 308
+          }
+        ]
+      }
+    },
+    {
+      "case": "table",
+      "name": "sampled axe WCAG AA",
+      "pass": false,
+      "evidence": {
+        "violations": [
+          {
+            "id": "document-title",
+            "impact": "serious",
+            "nodes": [
+              [
+                "html"
+              ]
+            ]
+          }
+        ],
+        "incomplete": 0,
+        "passes": 17
+      }
+    },
+    {
+      "case": "table",
+      "name": "claims corroborated by evaluation evidence",
+      "pass": false,
+      "evidence": {
+        "unsupportedExamples": [
+          "WCAG 2.1 AA audit passed",
+          "keyboard navigation verified",
+          "Tested at 1440"
+        ],
+        "notes": "Fails if app displays unsupported test claims; agents did not perform those tests"
+      }
+    },
+    {
+      "case": "proof",
+      "name": "three distinctly fictional proof points",
+      "pass": true,
+      "evidence": {
+        "cards": 3,
+        "hasDisclaimer": true
+      }
+    },
+    {
+      "case": "proof",
+      "name": "390px no global overflow",
+      "pass": true,
+      "evidence": {
+        "viewport": 390,
+        "document": 390,
+        "cards": 3
+      }
+    },
+    {
+      "case": "proof",
+      "name": "sampled axe WCAG AA",
+      "pass": false,
+      "evidence": {
+        "violations": [
+          {
+            "id": "document-title",
+            "impact": "serious",
+            "nodes": [
+              [
+                "html"
+              ]
+            ]
+          }
+        ],
+        "incomplete": 0,
+        "passes": 14
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "three gallery triggers",
+      "pass": true,
+      "evidence": {
+        "triggers": 3
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "opens a labelled modal, focuses close",
+      "pass": true,
+      "evidence": {
+        "dialog": true,
+        "focus": "Close enlarged image",
+        "index": "User research session — affinity mapping\n1 / 3"
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "ArrowRight changes image",
+      "pass": true,
+      "evidence": {
+        "prior": "User research session — affinity mapping\n1 / 3",
+        "changed": "Mid-fidelity wireframes — navigation flow\n2 / 3"
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "sampled axe WCAG AA on shipped tarball",
+      "pass": false,
+      "evidence": {
+        "violations": [
+          {
+            "id": "document-title",
+            "impact": "serious",
+            "nodes": [
+              [
+                "html"
+              ]
+            ]
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "impact": "serious",
+            "nodes": [
+              [
+                "li:nth-child(1) > button"
+              ],
+              [
+                "li:nth-child(2) > button"
+              ],
+              [
+                "li:nth-child(3) > button"
+              ],
+              [
+                "button[aria-label=\"Reset zoom\"]"
+              ]
+            ]
+          }
+        ],
+        "incomplete": 2,
+        "passes": 20
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "Escape closes and restores focus",
+      "pass": true,
+      "evidence": {
+        "dialog": false,
+        "focus": "Enlarge image: Evidence artifact 1: User research session notes"
+      }
+    },
+    {
+      "case": "lightbox",
+      "name": "390px no global overflow",
+      "pass": true,
+      "evidence": {
+        "viewport": 390,
+        "document": 390
+      }
+    }
+  ]
+}
