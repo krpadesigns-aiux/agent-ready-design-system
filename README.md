@@ -18,7 +18,7 @@ An evolving **React + TypeScript portfolio design system** for long-form product
 | Additional patterns | Source snapshots, design-token/CSS patterns and explicitly labeled Storybook demonstrations—not package exports |
 | Consumer checks | Fresh React package installation and server-rendering smoke tests |
 | Agent rules | REUSE / EXTEND / LOCAL / STOP guidance; **14 deterministic policy checks** |
-| Independent AI agent evaluation | **Not yet run**; deterministic policy tests are not autonomous-agent success evidence |
+| Independent AI agent evaluation | **Five selected Claude Code scenarios plus one table remediation retest recorded**; five policy-permitted decisions, three consumer builds passed, but one generated app fabricated test claims and browser QA found accessibility failures ([evidence and limitations](./verification/release1/RELEASE1_REVIEW.md)) |
 
 ### Storybook categories
 
@@ -84,7 +84,7 @@ Start with [AGENTS.md](./AGENTS.md), [the registry](./catalog/agent/registry.jso
 - **LOCAL_EXAMPLE_ONLY:** a demonstration, CSS recipe or composition that must not be treated as a published React export.
 - **STOP:** no matching component, security/privacy violation, unauthorized source or unsupported claim.
 
-Do not claim independent autonomous-agent success until an external agent has performed and passed the documented scenarios. The [evaluation protocol](./verification/AGENT_EVALUATION_PROTOCOL.md) describes how to test it.
+Five initial independent coding-agent scenarios and a controlled same-task remediation retest are documented in the [Release 1 evaluation findings](./verification/release1/RELEASE1_REVIEW.md). The [evaluation protocol](./verification/AGENT_EVALUATION_PROTOCOL.md) remains the framework for broader testing. **Do not generalize the selected results to every component or claim full autonomous readiness:** one initial consumer included fabricated test claims and generated applications had accessibility failures.
 
 ## Architecture and boundaries
 

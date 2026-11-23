@@ -60,8 +60,10 @@
   "agent_readiness": {
     "phase": "packaged-rc-pending-independent-evaluation",
     "allowed_action": "REUSE_WITH_VERIFICATION",
-    "independent_agent_test": "not_run",
-    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+    "independent_agent_test": "evaluated-integration-pass-consumer-title-failure",
+    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+    "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+    "observed_limitations": "Correct discovery, package import and build. Three sample metric cards were explicitly fictional. Generated app had missing HTML title; consumer browser axe flagged document-title."
   },
   "consumption": {
     "package": "@krpadesigns/portfolio-design-system",

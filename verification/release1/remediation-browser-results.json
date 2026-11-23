@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-11-23T01:44:45.403Z",
+  "scenario": "table-remediation",
+  "testedAgainst": "fresh Claude Code consumer built after guidance revision",
+  "tests": [
+    {
+      "name": "remediation document title",
+      "pass": true,
+      "observed": {
+        "title": "Enterprise Case Study — Evaluation Criteria"
+      }
+    },
+    {
+      "name": "remediation table rows & accessible label",
+      "pass": true,
+      "observed": {
+        "rows": 3,
+        "label": "Evaluation criteria comparison: Criterion, Evidence, and Status"
+      }
+    },
+    {
+      "name": "remediation no unsupported pass claims",
+      "pass": true,
+      "observed": {
+        "usesNotEvaluated": true
+      }
+    },
+    {
+      "name": "remediation mobile overflow contained",
+      "pass": true,
+      "observed": {
+        "viewport": 390,
+        "doc": 390,
+        "reg": [
+          {
+            "scroll": 480,
+            "client": 308
+          }
+        ]
+      }
+    },
+    {
+      "name": "remediation axe WCAG sample",
+      "pass": true,
+      "observed": {
+        "violations": [],
+        "incomplete": 0
+      }
+    }
+  ],
+  "passed": 5,
+  "failed": 0
+}

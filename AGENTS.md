@@ -11,7 +11,7 @@ This repository is a public React + TypeScript **portfolio and case-study storyt
    - `KeyDecisionsAccordion`
    - `ProofStrip`
    - `CaseStudyImageLightbox`
-4. These four exports are tested with a fresh tarball install and server-rendering smoke test, **not** a complete browser/accessibility test or independent autonomous agent evaluation. The package is `private: true` and is **not published on npm**. For independent consumption, build and install a local tarball or otherwise use an explicitly authorized package source.
+4. The original package smoke test alone is **not** an independent agent evaluation or full accessibility certification. Selected independent Claude Code evaluations and browser findings are recorded in `verification/release1/RELEASE1_REVIEW.md`, with failures and limits preserved. The package is `private: true` and is **not published on npm**. For independent consumption, build and install a local tarball or otherwise use an explicitly authorized package source.
 5. `source-snapshot-in-catalog` is not a package export. `reference-demo-not-packaged` and `public-safe-adaptation` are illustrative compositions or patterns, not stable standalone package APIs. Foundations are tokens/CSS; they need no gratuitous React wrappers.
 6. Use the canonical public repository for shared design-system source. Never import private portfolio paths or copy unlicensed employer assets.
 
@@ -31,6 +31,14 @@ Discover → inspect registry + contract + story + source → record selection a
 
 Provide the contract ID, Storybook story ID, installed import path, modified files, actual commands and outcomes, any interventions, and open accessibility issues. A successful command without a working consumer is not proof of reuse.
 
+### Claim provenance and generated sample data
+
+- **Never write “passed”, “verified”, “audited”, “WCAG compliant”, “tested at 390/768/1440px”, or a quantified product outcome in an example merely because the component supports those capabilities.** Only state test outcomes you personally ran in this consumer and can tie to actual check logs or an explicit trustworthy user-supplied source.
+- For demonstration rows, use visibly fictional **sample** content with status **“Example — not evaluated”** (or equivalent). Distinguish intended criteria from test results; do not use “Met” or “Pass” as a sample status without corresponding evidence.
+- An actual successful TypeScript/Vite build supports only a build/type-check claim; it does not establish keyboard, WCAG, responsive, screen-reader, or product-impact outcomes.
+- Before reporting a consumer as complete, check document `<title>`, accessible names including visible button text, and whether any sample data asserts unrun validations. Record absent checks as limitations, not success claims.
+
+
 ## Verification
 
 ```bash
@@ -44,7 +52,7 @@ npm run package:smoke
 
 For interactive components: check desktop/tablet/mobile (1440/768/390px), keyboard (Tab/Shift+Tab/Enter/Space/Escape/arrows), accessible labels, modal focus and focus return, reduced-motion behavior and overflow. Record findings; build-only tests do not establish accessible behavior.
 
-`verification/agent-scenarios.json` is a deterministic **policy fixture**, not an actual coding-agent test report. `verification/AGENT_EVALUATION_PROTOCOL.md` describes an independent evaluation protocol. Do not claim autonomous-agent success until independent runs and outputs are recorded and reviewed.
+`verification/agent-scenarios.json` remains a deterministic **policy fixture**, not a coding-agent test report. `verification/release1/RELEASE1_REVIEW.md` now contains a narrow five-scenario independent Claude Code evaluation and one remediation retest. Do not generalize these selected results to all components or all agent models.
 
 ## Publication and boundaries
 
@@ -52,4 +60,4 @@ The GitHub repository and Storybook are public, licensed MIT for code the owner 
 
 Coding agents must not push, create releases, publish packages, deploy, or modify private portfolio sources without explicit user authorization and review. Independent evaluations must run in isolated consumer workspaces.
 
-**Maturity:** four packaged React exports; 31 registry entries; 51 Storybook examples; deterministic policy checks passed; full independent coding-agent and interactive browser evaluations still require recorded evidence.
+**Maturity:** four packaged React exports; 31 registry entries; 51 Storybook examples. Five selected independent-agent scenarios and one remediation retest are documented; component selection was policy-permitted in all five initial tasks, but one generated app contained false evidence claims and the generated consumers had browser accessibility failures. Broader agent evaluation and accessibility testing remain incomplete.

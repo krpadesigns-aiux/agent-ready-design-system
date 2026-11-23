@@ -107,8 +107,10 @@
   "agent_readiness": {
     "phase": "documented-and-discoverable",
     "allowed_action": "REUSE_WITH_VERIFICATION",
-    "independent_agent_test": "not_run",
-    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22"
+    "independent_agent_test": "evaluated-technical-pass-claim-failure-remediation-pass",
+    "independent_consumer_test": "fresh-npm-tarball-server-smoke-passed-2026-11-22",
+    "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+    "observed_limitations": "One initial consumer built but asserted unperformed audits and breakpoint checks; same-task retest with revised agent instructions produced evidence-grounded sample values and passed 5/5 targeted browser checks."
   },
   "consumption": {
     "package": "@krpadesigns/portfolio-design-system",

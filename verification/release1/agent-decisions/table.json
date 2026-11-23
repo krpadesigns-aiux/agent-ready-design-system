@@ -1,0 +1,45 @@
+{
+  "selected_registry_id": "responsive-table",
+  "storybook_story_ids": [
+    "04-metrics-and-evidence-responsive-table--default",
+    "04-metrics-and-evidence-responsive-table--progressive-disclosure",
+    "04-metrics-and-evidence-responsive-table--narrow-container"
+  ],
+  "decision": "REUSE_WITH_VERIFICATION",
+  "rationale": "ResponsiveTable is the only packaged export whose semantic purpose matches a structured comparison of rows across labeled columns (Criterion, Evidence, Status). The registry entry id='responsive-table' specifies 'use_when: Structured comparative data is genuinely tabular' and 'allowed_action: REUSE_WITH_VERIFICATION'. The contract documents required props (columns, rows, ariaLabel), accessibility semantics (th scope=col, th scope=row via firstColumnIsRowHeader, labelled scrollable region), and responsive overflow behavior. No other packaged export (KeyDecisionsAccordion, ProofStrip, CaseStudyImageLightbox) fits a row-column comparison table. Catalog entries with EXTRACT_BEFORE_EXTERNAL_REUSE or LOCAL_EXAMPLE_ONLY were not used. The local npm tarball (0.2.0-rc.0) was installed; tsc --noEmit + vite build both passed with zero errors.",
+  "package_imports": [
+    "@krpadesigns/portfolio-design-system",
+    "@krpadesigns/portfolio-design-system/styles.css"
+  ],
+  "files_changed": [
+    "consumer/src/App.tsx",
+    "consumer/package.json",
+    "consumer/package-lock.json",
+    "consumer/EVALUATION_DECISION.json"
+  ],
+  "commands_run": [
+    "npm install ../system/krpadesigns-portfolio-design-system-0.2.0-rc.0.tgz",
+    "npm run build"
+  ],
+  "build_result": {
+    "tsc_noEmit": "passed",
+    "vite_build": "passed",
+    "warnings": [
+      "'use client' module-level directives ignored by Vite bundler (non-fatal, expected for RSC-annotated library in a Vite consumer)"
+    ],
+    "errors": []
+  },
+  "testing_limitations": [
+    "No interactive browser test was run; accessible label, keyboard navigation (Tab/Shift+Tab, focus on scrollable region), and reduced-motion behavior are unverified at runtime.",
+    "No viewport tests at 1440/768/390 px were performed; responsive overflow is unverified beyond build.",
+    "The 'use client' directives in the package dist are non-fatal warnings in a Vite context but indicate RSC assumptions not verified.",
+    "Independent autonomous agent test status in registry is 'not_run'; this evaluation does not change that status.",
+    "No Storybook build or catalog:validate was run in the consumer (those commands belong to the system package, which must not be modified)."
+  ],
+  "human_review_needed": [
+    "Interactive browser and keyboard accessibility verification at desktop, tablet, and mobile breakpoints.",
+    "Confirm th scope=row is rendered correctly by ResponsiveTable when firstColumnIsRowHeader=true.",
+    "Review the 'use client' Vite warnings and confirm they are acceptable for the deployment target.",
+    "Any promotion of maturity beyond 'candidate' in the design-system registry requires explicit human approval per AGENTS.md."
+  ]
+}

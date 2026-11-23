@@ -103,7 +103,9 @@
   "agent_readiness": {
     "phase": "documented-and-discoverable",
     "allowed_action": "EXTRACT_BEFORE_EXTERNAL_REUSE",
-    "independent_agent_test": "not_run",
-    "independent_consumer_test": "not_run"
+    "independent_agent_test": "evaluated-extraction-approval-required",
+    "independent_consumer_test": "not_run",
+    "independent_agent_evidence": "verification/release1/RELEASE1_REVIEW.md",
+    "observed_limitations": "Correctly identified source-only chapter nav and required human approval before extraction. No unauthorized package import or source copy; no consumer implementation."
   }
 }
